@@ -1,0 +1,1 @@
+# shadowverse-wb-cards
