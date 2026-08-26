@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111820">
+<meta name="theme-color" content="#f3fbff">
 <title>Shadowverse: Worlds Beyond｜アズヴォルト・レヴナント 新弾カード事前評価</title>
 <style>
 :root{
@@ -696,6 +696,374 @@ dialog::backdrop{background:rgba(4,9,13,.72);backdrop-filter:blur(4px)}
   .section-head h2{font-size:22px}
 }
 
+
+
+/* =========================================================
+   Cute light-blue game UI theme
+   Inspired by friendly Japanese kids-game interfaces.
+   ========================================================= */
+:root{
+  --bg:#f3fbff;
+  --panel:#ffffff;
+  --soft:#f7fcff;
+  --line:#bfe4f2;
+  --line2:#a8d8eb;
+  --text:#173e63;
+  --muted:#66819a;
+  --blue:#159ed5;
+  --blue-soft:#e5f6ff;
+  --yellow:#ffd85a;
+  --yellow-soft:#fff6cc;
+  --navy:#153d66;
+  --mint:#dff7ef;
+  --pink:#ffe8ee;
+  --shadow:0 8px 0 rgba(86,151,184,.08),0 13px 28px rgba(62,122,157,.10);
+  --s-bg:#ffe1e6; --s-fg:#c94758;
+  --a-bg:#ffecd8; --a-fg:#c46b26;
+  --b-bg:#fff5bd; --b-fg:#947200;
+  --c-bg:#dff6df; --c-fg:#3d8c54;
+  --d-bg:#e2f0ff; --d-fg:#3972a8;
+}
+html{background:#f3fbff}
+body{
+  background:
+    radial-gradient(circle at 14px 14px,rgba(51,170,217,.06) 0 3px,transparent 3.5px) 0 0/28px 28px,
+    linear-gradient(180deg,#ffffff 0,#f5fbff 18%,#eef9ff 100%);
+  color:var(--text);
+  font-family:"Hiragino Maru Gothic ProN","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic",Meiryo,system-ui,sans-serif;
+  font-weight:600;
+  letter-spacing:.01em;
+}
+button,input,select,textarea{font-family:inherit}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:4px solid rgba(255,216,90,.55);
+  outline-offset:2px;
+}
+
+/* Header */
+.hero{
+  position:relative;
+  overflow:hidden;
+  background:#fff;
+  border:2px solid #bfe5f4;
+  border-radius:26px;
+  padding:24px 28px 25px;
+  box-shadow:var(--shadow);
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  width:170px;height:170px;border-radius:50%;
+  right:-55px;top:-70px;
+  background:#dff5ff;
+  border:20px solid #effbff;
+}
+.hero::after{
+  content:"";
+  position:absolute;
+  left:28px;bottom:14px;
+  width:110px;height:8px;border-radius:999px;
+  background:var(--yellow);
+}
+.title-small{
+  position:relative;z-index:1;
+  color:#5792b0;font-weight:800;letter-spacing:.045em
+}
+.title-mid{
+  position:relative;z-index:1;
+  color:#158dc6;font-weight:900;
+  text-shadow:0 2px 0 #fff;
+}
+.title-main{
+  position:relative;z-index:1;
+  color:var(--navy);font-weight:900;letter-spacing:.02em;
+  text-shadow:0 2px 0 #fff,0 4px 0 rgba(20,153,207,.08)
+}
+.top-rule{display:none}
+
+/* Sticky class tabs */
+.class-bar{
+  background:rgba(247,252,255,.96);
+  border-top:0;
+  border-bottom:2px solid #c9e8f4;
+  box-shadow:0 5px 14px rgba(57,121,157,.06);
+}
+.class-inner{gap:10px;padding-top:11px;padding-bottom:11px}
+.class-btn{
+  border:2px solid #c6dfeb;
+  background:#fff;
+  color:#3f6683;
+  border-radius:999px;
+  padding:9px 16px;
+  font-weight:900;
+  box-shadow:0 3px 0 #e4f0f6;
+  transition:transform .12s ease,background .12s ease,border-color .12s ease;
+}
+.class-btn:hover{background:#effaff;transform:translateY(-1px)}
+.class-btn.active{
+  background:var(--yellow);
+  border-color:#ecbd32;
+  color:#274f70;
+  box-shadow:0 3px 0 #e0ad24,0 7px 14px rgba(218,176,42,.13)
+}
+
+/* Controls */
+.controls-card{
+  background:#fff;
+  border:2px solid #c8e7f3;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  padding:17px;
+}
+.search,.select{
+  border:2px solid #c6dfeb;
+  border-radius:14px;
+  background:#fbfeff;
+  color:var(--navy);
+  font-weight:750;
+}
+.search::placeholder{color:#8aa3b5}
+.search:focus,.select:focus{border-color:#55b7dc;background:#fff}
+.dir-btn,.rated-toggle,.tier-filter{
+  border:2px solid #c6dfeb;
+  border-radius:13px;
+  background:#fff;
+  color:#3e6683;
+  font-weight:900;
+  box-shadow:0 3px 0 #e8f2f7;
+}
+.dir-btn:hover,.rated-toggle:hover,.tier-filter:hover{background:#f0fbff}
+.tier-filter.active,.rated-toggle.active{
+  background:#dff4ff;
+  color:#177ba8;
+  border-color:#7bc5e2;
+  box-shadow:0 3px 0 #b8deed
+}
+.quick-row{border-top:2px dashed #dcecf3}
+.quick-label{color:#4d7791;font-weight:900}
+
+/* Summary chips */
+.summary{gap:8px;color:#57748b}
+.summary strong{color:var(--navy);font-weight:900}
+.count-chip{
+  border:2px solid #d0e6f0;
+  background:#fff;
+  border-radius:999px;
+  box-shadow:0 2px 0 #e5f1f6;
+  padding:5px 10px;
+  font-weight:800
+}
+.section-head h2{
+  color:var(--navy);
+  font-weight:900;
+  letter-spacing:.02em;
+  display:inline-flex;align-items:center;gap:8px
+}
+.section-head h2::before{
+  content:"";width:8px;height:24px;border-radius:999px;background:#20a8df;box-shadow:8px 0 0 #ffd85a
+}
+
+/* Cards */
+.grid{gap:20px}
+.card{
+  background:#fff;
+  border:2px solid #c9e5f1;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  padding:17px;
+  transition:transform .14s ease,box-shadow .14s ease,border-color .14s ease;
+}
+.card:hover{
+  transform:translateY(-2px);
+  border-color:#97d2e8;
+  box-shadow:0 9px 0 rgba(86,151,184,.08),0 16px 32px rgba(62,122,157,.13)
+}
+.card-image{
+  border:3px solid #e1eef5;
+  border-radius:18px;
+  background:#fff;
+  box-shadow:0 5px 0 #edf5f9;
+}
+.card h3{
+  color:var(--navy);
+  font-weight:900;
+  letter-spacing:.02em;
+}
+.name-row{gap:9px}
+.user-tier,.group-tier{
+  border-width:2px!important;
+  border-radius:10px!important;
+  font-weight:900!important;
+  box-shadow:0 2px 0 rgba(49,83,108,.08)
+}
+.badge{
+  background:#e5f6ff;
+  color:#32799d;
+  border:1px solid #c8e9f7;
+  border-radius:999px;
+  padding:4px 9px;
+  font-weight:900;
+}
+.badge.ai{
+  background:var(--yellow-soft);
+  color:#8a6716;
+  border-color:#f3dfa0;
+}
+.label{
+  color:#128fc6;
+  font-size:12px;
+  font-weight:900;
+  letter-spacing:.055em;
+}
+.axis{color:#315b78;font-weight:900}
+.copy{color:#38546b;font-weight:600}
+.reason-box{
+  border-left:0;
+  border:2px solid #cde7f3;
+  background:#f4fbff;
+  border-radius:14px;
+  padding:10px 12px
+}
+.reason-title{color:#2c7da4;font-weight:900}
+.reason-more{color:#0b8fc9;font-weight:900}
+
+/* Group ratings */
+.group-box,.poll-large{
+  background:#f8fdff;
+  border:2px solid #cde8f4;
+  border-radius:18px;
+}
+.group-head strong,.poll-title strong{color:var(--navy);font-weight:900}
+.mini-tier{
+  border:2px solid #e1edf3;
+  border-radius:10px;
+  font-weight:900;
+  background:#fff
+}
+.poll-track{height:14px;background:#e8f2f7;border:1px solid #d7e7ef}
+.poll-fill{background:#4fb1db}
+.poll-row:nth-child(2) .poll-fill{background:#f06f7b}
+.poll-row:nth-child(3) .poll-fill{background:#f29b4b}
+.poll-row:nth-child(4) .poll-fill{background:#e9c93d}
+.poll-row:nth-child(5) .poll-fill{background:#69bb7c}
+.poll-row:nth-child(6) .poll-fill{background:#62a5d8}
+.member-chip{
+  border:2px solid #d8e8f0;
+  background:#fff;
+  border-radius:999px;
+  color:#46677f;
+  font-weight:800;
+  box-shadow:0 2px 0 #edf4f7
+}
+.member-chip.member-edit:hover{border-color:#6fc1df;background:#eefaff}
+.group-note{color:#758b9d}
+
+/* Actions */
+.btn,.tool-btn{
+  border:2px solid #bddbea;
+  background:#fff;
+  color:#345f7d;
+  border-radius:14px;
+  font-weight:900;
+  box-shadow:0 4px 0 #dfedf4;
+  transition:transform .1s ease,box-shadow .1s ease,background .1s ease;
+}
+.btn:hover,.tool-btn:hover{background:#f2fbff;transform:translateY(-1px)}
+.btn:active,.tool-btn:active{transform:translateY(2px);box-shadow:0 1px 0 #dfedf4}
+.btn.primary{
+  background:#dff3ff;
+  border-color:#84c8e4;
+  color:#166d99;
+  box-shadow:0 4px 0 #b8ddeb
+}
+.btn.good{
+  background:#e9f8e9;
+  border-color:#a9d8b0;
+  color:#39804b;
+  box-shadow:0 4px 0 #cbe6d0
+}
+.btn.danger,.reset-btn{
+  background:#fff0f2;
+  border-color:#efbdc5;
+  color:#b84a59;
+  box-shadow:0 4px 0 #efd8dc
+}
+.final-rating-chip{
+  border:2px solid #b7dcea;
+  background:#eef9ff;
+  color:#2d6b91;
+  border-radius:11px;
+  font-weight:900;
+  box-shadow:0 2px 0 #dbeef5
+}
+
+/* Tier colors: sticker-like */
+.tier-S{background:#ffe1e6!important;color:#c53d50!important;border-color:#f2aeb8!important}
+.tier-A{background:#ffead5!important;color:#bd6422!important;border-color:#f2c593!important}
+.tier-B{background:#fff4b9!important;color:#8a6b00!important;border-color:#e8d26b!important}
+.tier-C{background:#e2f7df!important;color:#388249!important;border-color:#a9d8ae!important}
+.tier-D{background:#e4f1ff!important;color:#3972a3!important;border-color:#abcce8!important}
+
+/* Dialogs */
+dialog{
+  border:3px solid #b9dfef;
+  border-radius:24px;
+  background:#fff;
+  box-shadow:0 18px 0 rgba(53,114,146,.08),0 28px 80px rgba(37,82,111,.22)
+}
+dialog::backdrop{background:rgba(53,94,125,.22);backdrop-filter:blur(4px)}
+.dialog-head{
+  background:#f4fbff;
+  border-bottom:2px solid #d4eaf4;
+  padding:14px 17px
+}
+.dialog-head strong{color:var(--navy);font-weight:900;font-size:18px}
+.icon-close{
+  background:#fff;
+  border:2px solid #c6e1ee;
+  color:#3f6f8e;
+  font-weight:900;
+  box-shadow:0 3px 0 #e4f0f5
+}
+.detail-block,.member-tier-preview{
+  background:#f6fcff;
+  border:2px solid #d6eaf3;
+  border-radius:14px
+}
+.detail-block b{color:#1888b8;font-weight:900}
+.rating-label{color:#315f7c;font-weight:900}
+.tier-pick{
+  border:2px solid #c8dfeb;
+  border-radius:14px;
+  box-shadow:0 4px 0 #e4eef4;
+  font-weight:900;
+}
+.tier-pick.selected{box-shadow:inset 0 0 0 3px #43a8d5,0 4px 0 #beddeb}
+.rating-body textarea,.member-editor-field input{
+  border:2px solid #c8dfeb;
+  border-radius:14px;
+  background:#fbfeff
+}
+
+/* Footer / utilities */
+.tools{border-top:2px dashed #cce5ef}
+.tools h2{color:var(--navy);font-weight:900}
+footer{color:#698398;font-weight:700}
+.empty{border:2px dashed #bcddeb;border-radius:20px;background:#fbfeff}
+
+@media(max-width:760px){
+  .wrap{padding-left:12px;padding-right:12px}
+  .hero{border-radius:20px;padding:19px 18px 23px}
+  .hero::after{left:18px;bottom:10px;width:78px;height:6px}
+  .class-inner{padding-left:12px;padding-right:12px}
+  .class-btn{padding:9px 14px}
+  .controls-card{border-radius:18px;padding:12px}
+  .card{border-radius:21px;padding:12px}
+  .card-image{border-radius:14px}
+  .card h3{font-size:19px}
+  .card-actions{gap:7px}
+  .btn{min-height:44px}
+}
 </style>
 </head>
 <body>
@@ -899,10 +1267,11 @@ const OVERALL_STORAGE_KEY = "svwb_azvalt_overall_ratings_v1";
 const MANUAL_GROUP_STORAGE_KEY = "svwb_azvalt_manual_group_ratings_v1";
 const TIER_SCORE = {S:5,A:4,B:3,C:2,D:1};
 const TIER_LABELS = ["S","A","B","C","D"];
-const GROUP_RATINGS = {"svwb-014d00542e74":{"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"},"次蔵":{"tier":"D","raw":"D"},"huo5909":{"tier":"B","raw":"ｂ"},"＄":{"tier":"D","raw":"D"},"おじ":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"めいめい":{"tier":"C","raw":"C"}},"svwb-263402ca1f07":{"おじ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"},"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"}},"svwb-efd556cadcad":{"おじ":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"C","raw":"C"},"huo5909":{"tier":"B","raw":"b"},"次蔵":{"tier":"C","raw":"C"},"めいめい":{"tier":"A","raw":"A"},"ナマステ":{"tier":"B","raw":"B"}},"svwb-b9e1889353c0":{"オメガ柿本":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"huo5909":{"tier":"A","raw":"a"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"おじ":{"tier":"B","raw":"b"},"次蔵":{"tier":"B","raw":"B"}},"svwb-53b2310ff8a7":{"おじ":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"＄":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"}},"svwb-91277000a611":{"huo5909":{"tier":"C","raw":"c"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"}},"svwb-2f0031532451":{"huo5909":{"tier":"D","raw":"d"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"DDD"},"まひ [すきーら],":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"}},"svwb-6c095a83919b":{"ナマステ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"おじ":{"tier":"D","raw":"d"}},"svwb-0f075fc70e6d":{"めいめい":{"tier":"A","raw":"A"},"huo5909":{"tier":"C","raw":"c"},"次蔵":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"B","raw":"B"},"おじ":{"tier":"D","raw":"d"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"}},"svwb-6693263e93b2":{"次蔵":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"huo5909":{"tier":"D","raw":"ddddd"},"＄":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"}},"svwb-25f2951b1bd2":{"おじ":{"tier":"D","raw":"d"},"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"D","raw":"D"},"次蔵":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"},"めいめい":{"tier":"C","raw":"C"}},"svwb-230400dd7ce5":{"オメガ柿本":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"c"},"まひ [すきーら],":{"tier":"C","raw":"C"},"次蔵":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"あD"},"めいめい":{"tier":"C","raw":"C"}},"svwb-447bfc1c8b7a":{"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"B","raw":"B"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"オメガ柿本":{"tier":"B","raw":"B"}},"svwb-8ce2861f2875":{"huo5909":{"tier":"D","raw":"dddd"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"},"次蔵":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"でー"},"めいめい":{"tier":"D","raw":"D"}},"svwb-9a9f912a532c":{"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"dddd"},"まひ [すきーら],":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"C","raw":"C"},"おじ":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"}},"svwb-92f8d09844ed":{"まひ [すきーら],":{"tier":"A","raw":"A"},"huo5909":{"tier":"S","raw":"s"},"オメガ柿本":{"tier":"S","raw":"S"},"＄":{"tier":"A","raw":"A"},"次蔵":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"えす"}},"svwb-60f74fed56cd":{"huo5909":{"tier":"A","raw":"a"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"次蔵":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"C","raw":"C"},"めいめい":{"tier":"C","raw":"c"},"おじ":{"tier":"A","raw":"A"}},"svwb-c10315b16406":{"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"c"},"まひ [すきーら],":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"}},"svwb-3bc93a2ebbd4":{"次蔵":{"tier":"C","raw":"C"},"huo5909":{"tier":"D","raw":"d"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":null,"raw":"f"},"めいめい":{"tier":"D","raw":"D"}},"svwb-fac7a9bd4931":{"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"＄":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S＋"}},"svwb-366b8c72ff4e":{"huo5909":{"tier":"D","raw":"d"},"まひ [すきーら],":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"c"}},"svwb-b9d279bb0496":{"次蔵":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"おじ":{"tier":"S","raw":"S＋"},"まひ [すきーら],":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"}},"svwb-d9eac082932c":{"次蔵":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"c"},"ナマステ":{"tier":"A","raw":"A"},"おじ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"}},"svwb-822935d1ee03":{"＄":{"tier":"B","raw":"B"},"次蔵":{"tier":"B","raw":"B"},"huo5909":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"めいめい":{"tier":"D","raw":"D"}},"svwb-ff8228bf0500":{"次蔵":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"huo5909":{"tier":"B","raw":"b"},"おじ":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"}},"svwb-ca113e65dd82":{"次蔵":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"}},"svwb-a217c9ae907a":{"次蔵":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"＄":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"s＋"},"huo5909":{"tier":"S","raw":"s"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-8cc0a1834df6":{"huo5909":{"tier":"B","raw":"b"},"＄":{"tier":"S","raw":"S"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"C"}},"svwb-4f7df0c8cd1a":{"huo5909":{"tier":"S","raw":"ss"},"おじ":{"tier":"S","raw":"S＋"},"オメガ柿本":{"tier":"D","raw":"D"},"次蔵":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"}},"svwb-1fc6a8e6a02b":{"huo5909":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"おじ":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"B","raw":"B"}},"svwb-b9d1de4d84bf":{"huo5909":{"tier":"D","raw":"dd"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"おじ":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"}},"svwb-dd2e1e01152b":{"huo5909":{"tier":"S","raw":"s"},"おじ":{"tier":"S","raw":"Sぷらす"},"次蔵":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"},"めいめい":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-4b11e4872714":{"次蔵":{"tier":"A","raw":"A"},"huo5909":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"}},"svwb-a8d74e4168e8":{"オメガ柿本":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"SSSSSSSSS"},"次蔵":{"tier":"S","raw":"S"},"huo5909":{"tier":"S","raw":"s"},"おじ":{"tier":"C","raw":"C"},"ナマステ":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"めいめい":{"tier":"S","raw":"S"}},"svwb-5695d96b3d66":{"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"＄":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"d"},"おじ":{"tier":"D","raw":"D"}},"svwb-22771babf7f9":{"オメガ柿本":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"SSS"},"おじ":{"tier":"S","raw":"S＋"},"huo5909":{"tier":"S","raw":"sssssssssss"},"めいめい":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"s"},"＄":{"tier":"S","raw":"S"}},"svwb-8ee1f6624cfe":{"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"D","raw":"D"},"次蔵":{"tier":"B","raw":"B"},"めいめい":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"}},"svwb-8bff9b4da1cf":{"huo5909":{"tier":"D","raw":"d"},"オメガ柿本":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"B","raw":"B"},"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"D","raw":"D"}},"svwb-f2f51f9d3b87":{"huo5909":{"tier":"S","raw":"s"},"次蔵":{"tier":"A","raw":"A"},"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"},"おじ":{"tier":"C","raw":"C"}},"svwb-892512f43c95":{"めいめい":{"tier":"S","raw":"S"},"ナマステ":{"tier":"B","raw":"B"},"次蔵":{"tier":"A","raw":"A"},"＄":{"tier":"C","raw":"C"},"huo5909":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S"}},"svwb-2e1b0f638732":{"次蔵":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"}},"svwb-b0898283adfd":{"めいめい":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"huo5909":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"C"}},"svwb-17ad7573d51b":{"次蔵":{"tier":"D","raw":"D"},"＄":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"C","raw":"C"}},"svwb-86bbb3093f02":{"huo5909":{"tier":"S","raw":"SS"},"次蔵":{"tier":"S","raw":"S"},"ナマステ":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"めいめい":{"tier":"S","raw":"S"},"おじ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-84dc9c16c7b9":{"huo5909":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"A","raw":"A"},"＄":{"tier":"C","raw":"C"},"次蔵":{"tier":"A","raw":"A"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"B","raw":"B"}},"svwb-71c88802b7c4":{"次蔵":{"tier":"B","raw":"B"},"おじ":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"}},"svwb-477e41150cd8":{"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S＋"},"huo5909":{"tier":"A","raw":"A"},"次蔵":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-b232040c1532":{"huo5909":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-1c34c6ec382f":{"次蔵":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"S","raw":"S"},"おじ":{"tier":"C","raw":"C"}},"svwb-c0cb3e628e3a":{"おじ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"ナマステ":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"}},"svwb-39628470bf35":{"huo5909":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"s"},"めいめい":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-b4d76dd76ace":{"huo5909":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S"},"＄":{"tier":"A","raw":"A"},"ナマステ":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"B","raw":"B"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"C","raw":"C"}},"svwb-a022a5a0e336":{"huo5909":{"tier":"C","raw":"C"},"ナマステ":{"tier":"A","raw":"A"},"次蔵":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"}},"svwb-522c2236b074":{"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"D","raw":"D"},"おじ":{"tier":"B","raw":"B"},"huo5909":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"}},"svwb-254f3babe9e4":{"ナマステ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"s＋"},"＄":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"次蔵":{"tier":"S","raw":"S"},"めいめい":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-36a147ac0c14":{"次蔵":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"huo5909":{"tier":"S","raw":"SSSSSSSSSSS"},"＄":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"},"めいめい":{"tier":"D","raw":"D"}},"svwb-03f4df2bb9d1":{"＄":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S"},"次蔵":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"huo5909":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"}},"svwb-e309aa566e0b":{"huo5909":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"おじ":{"tier":"S","raw":"S"}},"svwb-22de1e963996":{"次蔵":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"S","raw":"S"}},"svwb-9effdefcd7ec":{"huo5909":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"}},"svwb-f56ca67ab67c":{"次蔵":{"tier":"A","raw":"A"},"huo5909":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-1b1e3f6ae150":{"huo5909":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"おじ":{"tier":"B","raw":"B"}},"svwb-4fe1418f51bc":{"huo5909":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-b64c711af81d":{"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S"},"huo5909":{"tier":"D","raw":"D"},"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"}},"svwb-2595a9390240":{"おじ":{"tier":"S","raw":"S"},"huo5909":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"B","raw":"B"}},"svwb-6555feeef8c5":{"次蔵":{"tier":"S","raw":"SSS"},"おじ":{"tier":"B","raw":"B"},"huo5909":{"tier":null,"raw":"0"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"D","raw":"D"},"＄":{"tier":"B","raw":"B"},"めいめい":{"tier":"D","raw":"D"}},"svwb-8e9dff23e040":{"huo5909":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"＄":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S＋"},"めいめい":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-86a681093ff9":{"次蔵":{"tier":"C","raw":"C"},"huo5909":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"おじ":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"}},"svwb-8fa0bc0cdcef":{"huo5909":{"tier":"A","raw":"A"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"B","raw":"B"},"おじ":{"tier":"A","raw":"A＋"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-32032cd1ba40":{"huo5909":{"tier":"S","raw":"S"},"次蔵":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"}},"svwb-ae99dc969973":{"＄":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"B","raw":"B"}},"svwb-85cbb543ac00":{"huo5909":{"tier":null,"raw":"-"},"おじ":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"ナマステ":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"}},"svwb-0a12c87399bf":{"おじ":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"huo5909":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"}},"svwb-298f87481bc2":{"huo5909":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"}},"svwb-99e08e164a24":{"huo5909":{"tier":null,"raw":"0"},"＄":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"おじ":{"tier":"S","raw":"sss"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-48a1f0e978b9":{"次蔵":{"tier":"S","raw":"SSS"},"ナマステ":{"tier":"S","raw":"S"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"B","raw":"b"},"huo5909":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"}}};
-const BASE_GROUP_MEMBERS = ["オメガ柿本","まひ [すきーら],","次蔵","huo5909","＄","おじ","ナマステ","めいめい"];
+const GROUP_RATINGS = {"svwb-014d00542e74":{"オメガ柿本":{"tier":"D","raw":"D"},"まひ":{"tier":"C","raw":"C"},"次蔵":{"tier":"D","raw":"D"},"huo5909":{"tier":"B","raw":"ｂ"},"＄":{"tier":"D","raw":"D"},"おじ":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"めいめい":{"tier":"C","raw":"C"}},"svwb-263402ca1f07":{"おじ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"まひ":{"tier":"C","raw":"C"},"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"}},"svwb-efd556cadcad":{"おじ":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"B","raw":"B"},"まひ":{"tier":"C","raw":"C"},"huo5909":{"tier":"B","raw":"b"},"次蔵":{"tier":"C","raw":"C"},"めいめい":{"tier":"A","raw":"A"},"ナマステ":{"tier":"B","raw":"B"}},"svwb-b9e1889353c0":{"オメガ柿本":{"tier":"A","raw":"A"},"まひ":{"tier":"B","raw":"B"},"huo5909":{"tier":"A","raw":"a"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"おじ":{"tier":"B","raw":"b"},"次蔵":{"tier":"B","raw":"B"}},"svwb-53b2310ff8a7":{"おじ":{"tier":"D","raw":"D"},"まひ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"＄":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"}},"svwb-91277000a611":{"huo5909":{"tier":"C","raw":"c"},"まひ":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"}},"svwb-2f0031532451":{"huo5909":{"tier":"D","raw":"d"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"DDD"},"まひ":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"}},"svwb-6c095a83919b":{"ナマステ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"まひ":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"おじ":{"tier":"D","raw":"d"}},"svwb-0f075fc70e6d":{"めいめい":{"tier":"A","raw":"A"},"huo5909":{"tier":"C","raw":"c"},"次蔵":{"tier":"B","raw":"B"},"まひ":{"tier":"B","raw":"B"},"おじ":{"tier":"D","raw":"d"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"}},"svwb-6693263e93b2":{"次蔵":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"huo5909":{"tier":"D","raw":"ddddd"},"＄":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"}},"svwb-25f2951b1bd2":{"おじ":{"tier":"D","raw":"d"},"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"D","raw":"D"},"次蔵":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"まひ":{"tier":"C","raw":"C"},"めいめい":{"tier":"C","raw":"C"}},"svwb-230400dd7ce5":{"オメガ柿本":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"c"},"まひ":{"tier":"C","raw":"C"},"次蔵":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"あD"},"めいめい":{"tier":"C","raw":"C"}},"svwb-447bfc1c8b7a":{"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"まひ":{"tier":"B","raw":"B"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"オメガ柿本":{"tier":"B","raw":"B"}},"svwb-8ce2861f2875":{"huo5909":{"tier":"D","raw":"dddd"},"＄":{"tier":"D","raw":"D"},"まひ":{"tier":"C","raw":"C"},"次蔵":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"でー"},"めいめい":{"tier":"D","raw":"D"}},"svwb-9a9f912a532c":{"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"dddd"},"まひ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"C","raw":"C"},"おじ":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"}},"svwb-92f8d09844ed":{"まひ":{"tier":"A","raw":"A"},"huo5909":{"tier":"S","raw":"s"},"オメガ柿本":{"tier":"S","raw":"S"},"＄":{"tier":"A","raw":"A"},"次蔵":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"えす"}},"svwb-60f74fed56cd":{"huo5909":{"tier":"A","raw":"a"},"まひ":{"tier":"A","raw":"A"},"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"次蔵":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"C","raw":"C"},"めいめい":{"tier":"C","raw":"c"},"おじ":{"tier":"A","raw":"A"}},"svwb-c10315b16406":{"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"c"},"まひ":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"}},"svwb-3bc93a2ebbd4":{"次蔵":{"tier":"C","raw":"C"},"huo5909":{"tier":"D","raw":"d"},"まひ":{"tier":"B","raw":"B"},"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":null,"raw":"f"},"めいめい":{"tier":"D","raw":"D"}},"svwb-fac7a9bd4931":{"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"まひ":{"tier":"A","raw":"A"},"＄":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S＋"}},"svwb-366b8c72ff4e":{"huo5909":{"tier":"D","raw":"d"},"まひ":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"c"}},"svwb-b9d279bb0496":{"次蔵":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"おじ":{"tier":"S","raw":"S＋"},"まひ":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"}},"svwb-d9eac082932c":{"次蔵":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"c"},"ナマステ":{"tier":"A","raw":"A"},"おじ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"}},"svwb-822935d1ee03":{"＄":{"tier":"B","raw":"B"},"次蔵":{"tier":"B","raw":"B"},"huo5909":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"B","raw":"B"},"まひ":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"めいめい":{"tier":"D","raw":"D"}},"svwb-ff8228bf0500":{"次蔵":{"tier":"S","raw":"S"},"まひ":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"huo5909":{"tier":"B","raw":"b"},"おじ":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"}},"svwb-ca113e65dd82":{"次蔵":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"まひ":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"}},"svwb-a217c9ae907a":{"次蔵":{"tier":"S","raw":"S"},"まひ":{"tier":"A","raw":"A"},"＄":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"s＋"},"huo5909":{"tier":"S","raw":"s"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-8cc0a1834df6":{"huo5909":{"tier":"B","raw":"b"},"＄":{"tier":"S","raw":"S"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"A","raw":"A"},"まひ":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"C"}},"svwb-4f7df0c8cd1a":{"huo5909":{"tier":"S","raw":"ss"},"おじ":{"tier":"S","raw":"S＋"},"オメガ柿本":{"tier":"D","raw":"D"},"次蔵":{"tier":"A","raw":"A"},"まひ":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"}},"svwb-1fc6a8e6a02b":{"huo5909":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"おじ":{"tier":"C","raw":"C"},"まひ":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"B","raw":"B"}},"svwb-b9d1de4d84bf":{"huo5909":{"tier":"D","raw":"dd"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"おじ":{"tier":"D","raw":"D"},"まひ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"}},"svwb-dd2e1e01152b":{"huo5909":{"tier":"S","raw":"s"},"おじ":{"tier":"S","raw":"Sぷらす"},"次蔵":{"tier":"A","raw":"A"},"まひ":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"},"めいめい":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-4b11e4872714":{"次蔵":{"tier":"A","raw":"A"},"huo5909":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"A","raw":"A"},"まひ":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"}},"svwb-a8d74e4168e8":{"オメガ柿本":{"tier":"S","raw":"S"},"まひ":{"tier":"S","raw":"SSSSSSSSS"},"次蔵":{"tier":"S","raw":"S"},"huo5909":{"tier":"S","raw":"s"},"おじ":{"tier":"C","raw":"C"},"ナマステ":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"めいめい":{"tier":"S","raw":"S"}},"svwb-5695d96b3d66":{"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"＄":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"まひ":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"d"},"おじ":{"tier":"D","raw":"D"}},"svwb-22771babf7f9":{"オメガ柿本":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"SSS"},"おじ":{"tier":"S","raw":"S＋"},"huo5909":{"tier":"S","raw":"sssssssssss"},"めいめい":{"tier":"S","raw":"S"},"まひ":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"s"},"＄":{"tier":"S","raw":"S"}},"svwb-8ee1f6624cfe":{"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"D","raw":"D"},"次蔵":{"tier":"B","raw":"B"},"めいめい":{"tier":"D","raw":"D"},"まひ":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"}},"svwb-8bff9b4da1cf":{"huo5909":{"tier":"D","raw":"d"},"オメガ柿本":{"tier":"C","raw":"C"},"まひ":{"tier":"B","raw":"B"},"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"D","raw":"D"}},"svwb-f2f51f9d3b87":{"huo5909":{"tier":"S","raw":"s"},"次蔵":{"tier":"A","raw":"A"},"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"B","raw":"B"},"まひ":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"},"おじ":{"tier":"C","raw":"C"}},"svwb-892512f43c95":{"めいめい":{"tier":"S","raw":"S"},"ナマステ":{"tier":"B","raw":"B"},"次蔵":{"tier":"A","raw":"A"},"＄":{"tier":"C","raw":"C"},"huo5909":{"tier":"B","raw":"B"},"まひ":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S"}},"svwb-2e1b0f638732":{"次蔵":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"}},"svwb-b0898283adfd":{"めいめい":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"huo5909":{"tier":"A","raw":"A"},"まひ":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"C"}},"svwb-17ad7573d51b":{"次蔵":{"tier":"D","raw":"D"},"＄":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"まひ":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"C","raw":"C"}},"svwb-86bbb3093f02":{"huo5909":{"tier":"S","raw":"SS"},"次蔵":{"tier":"S","raw":"S"},"ナマステ":{"tier":"A","raw":"A"},"まひ":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"めいめい":{"tier":"S","raw":"S"},"おじ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-84dc9c16c7b9":{"huo5909":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ":{"tier":"A","raw":"A"},"＄":{"tier":"C","raw":"C"},"次蔵":{"tier":"A","raw":"A"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"B","raw":"B"}},"svwb-71c88802b7c4":{"次蔵":{"tier":"B","raw":"B"},"おじ":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"まひ":{"tier":"C","raw":"C"}},"svwb-477e41150cd8":{"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S＋"},"huo5909":{"tier":"A","raw":"A"},"次蔵":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-b232040c1532":{"huo5909":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"S"},"まひ":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-1c34c6ec382f":{"次蔵":{"tier":"D","raw":"D"},"まひ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"S","raw":"S"},"おじ":{"tier":"C","raw":"C"}},"svwb-c0cb3e628e3a":{"おじ":{"tier":"S","raw":"S"},"まひ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"ナマステ":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"}},"svwb-39628470bf35":{"huo5909":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"まひ":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"s"},"めいめい":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-b4d76dd76ace":{"huo5909":{"tier":"A","raw":"A"},"まひ":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S"},"＄":{"tier":"A","raw":"A"},"ナマステ":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"B","raw":"B"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"C","raw":"C"}},"svwb-a022a5a0e336":{"huo5909":{"tier":"C","raw":"C"},"ナマステ":{"tier":"A","raw":"A"},"次蔵":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"A","raw":"A"},"まひ":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"}},"svwb-522c2236b074":{"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"D","raw":"D"},"おじ":{"tier":"B","raw":"B"},"huo5909":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ":{"tier":"D","raw":"D"}},"svwb-254f3babe9e4":{"ナマステ":{"tier":"S","raw":"S"},"まひ":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"s＋"},"＄":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"次蔵":{"tier":"S","raw":"S"},"めいめい":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-36a147ac0c14":{"次蔵":{"tier":"A","raw":"A"},"まひ":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"huo5909":{"tier":"S","raw":"SSSSSSSSSSS"},"＄":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"},"めいめい":{"tier":"D","raw":"D"}},"svwb-03f4df2bb9d1":{"＄":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S"},"次蔵":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"まひ":{"tier":"A","raw":"A"},"huo5909":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"}},"svwb-e309aa566e0b":{"huo5909":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"まひ":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"おじ":{"tier":"S","raw":"S"}},"svwb-22de1e963996":{"次蔵":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"まひ":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"S","raw":"S"}},"svwb-9effdefcd7ec":{"huo5909":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"まひ":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"}},"svwb-f56ca67ab67c":{"次蔵":{"tier":"A","raw":"A"},"huo5909":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"まひ":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-1b1e3f6ae150":{"huo5909":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"おじ":{"tier":"B","raw":"B"}},"svwb-4fe1418f51bc":{"huo5909":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"},"まひ":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-b64c711af81d":{"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S"},"huo5909":{"tier":"D","raw":"D"},"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"}},"svwb-2595a9390240":{"おじ":{"tier":"S","raw":"S"},"huo5909":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"まひ":{"tier":"B","raw":"B"}},"svwb-6555feeef8c5":{"次蔵":{"tier":"S","raw":"SSS"},"おじ":{"tier":"B","raw":"B"},"huo5909":{"tier":null,"raw":"0"},"まひ":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"D","raw":"D"},"＄":{"tier":"B","raw":"B"},"めいめい":{"tier":"D","raw":"D"}},"svwb-8e9dff23e040":{"huo5909":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"まひ":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"＄":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S＋"},"めいめい":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-86a681093ff9":{"次蔵":{"tier":"C","raw":"C"},"huo5909":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"},"まひ":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"おじ":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"}},"svwb-8fa0bc0cdcef":{"huo5909":{"tier":"A","raw":"A"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"B","raw":"B"},"おじ":{"tier":"A","raw":"A＋"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"},"まひ":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-32032cd1ba40":{"huo5909":{"tier":"S","raw":"S"},"次蔵":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"まひ":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"}},"svwb-ae99dc969973":{"＄":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"まひ":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"B","raw":"B"}},"svwb-85cbb543ac00":{"huo5909":{"tier":null,"raw":"-"},"おじ":{"tier":"C","raw":"C"},"まひ":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"ナマステ":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"}},"svwb-0a12c87399bf":{"おじ":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"huo5909":{"tier":"B","raw":"B"},"まひ":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"}},"svwb-298f87481bc2":{"huo5909":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"まひ":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"}},"svwb-99e08e164a24":{"huo5909":{"tier":null,"raw":"0"},"＄":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"おじ":{"tier":"S","raw":"sss"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-48a1f0e978b9":{"次蔵":{"tier":"S","raw":"SSS"},"ナマステ":{"tier":"S","raw":"S"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"B","raw":"b"},"huo5909":{"tier":"C","raw":"C"},"まひ":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"}}};
+const BASE_GROUP_MEMBERS = ["オメガ柿本","まひ","次蔵","huo5909","＄","おじ","ナマステ","めいめい"];
 let GROUP_MEMBERS = [...BASE_GROUP_MEMBERS];
 const GROUP_ALL = "__group__";
+const BLOCKED_GROUP_MEMBER_NAMES = new Set(["しょへ"]);
 
 let activeClass = "全カード";
 let activeTier = "all";
@@ -959,11 +1328,38 @@ function loadOverallRatings(){
 function persistOverallRatings(){
   try{ localStorage.setItem(OVERALL_STORAGE_KEY,JSON.stringify(overallRatings)); return true; }catch{return false;}
 }
+function isBlockedGroupMember(name){
+  const cleaned=String(name||"").normalize("NFKC").trim().replace(/,+$/g,"").trim();
+  return BLOCKED_GROUP_MEMBER_NAMES.has(cleaned);
+}
+function sanitizeManualGroupRatings(input){
+  const src=input&&typeof input==="object"&&!Array.isArray(input)?input:{};
+  const cleaned={};
+  for(const [cardId,votes] of Object.entries(src)){
+    if(!votes||typeof votes!=="object"||Array.isArray(votes)) continue;
+    const keep={};
+    for(const [name,vote] of Object.entries(votes)){
+      if(isBlockedGroupMember(name)) continue;
+      keep[name]=vote;
+    }
+    if(Object.keys(keep).length) cleaned[cardId]=keep;
+  }
+  return cleaned;
+}
 function loadManualGroupRatings(){
-  try{ const x=JSON.parse(localStorage.getItem(MANUAL_GROUP_STORAGE_KEY)||"{}"); return x&&typeof x==="object"&&!Array.isArray(x)?x:{}; }catch{return {};}
+  try{
+    const parsed=JSON.parse(localStorage.getItem(MANUAL_GROUP_STORAGE_KEY)||"{}");
+    const cleaned=sanitizeManualGroupRatings(parsed);
+    localStorage.setItem(MANUAL_GROUP_STORAGE_KEY,JSON.stringify(cleaned));
+    return cleaned;
+  }catch{return {};}
 }
 function persistManualGroupRatings(){
-  try{ localStorage.setItem(MANUAL_GROUP_STORAGE_KEY,JSON.stringify(manualGroupRatings)); return true; }catch{return false;}
+  try{
+    manualGroupRatings=sanitizeManualGroupRatings(manualGroupRatings);
+    localStorage.setItem(MANUAL_GROUP_STORAGE_KEY,JSON.stringify(manualGroupRatings));
+    return true;
+  }catch{return false;}
 }
 function normalizeTierInput(raw){
   const value=String(raw??"").normalize("NFKC").trim();
@@ -987,13 +1383,19 @@ function overallBadge(card){
 function cleanMemberName(name){ return String(name||"").trim().replace(/,+$/g,"").trim(); }
 function resolveMemberKey(input){
   const cleaned=cleanMemberName(input);
-  if(!cleaned) return "";
-  const all=[...BASE_GROUP_MEMBERS,...Object.values(GROUP_RATINGS).flatMap(o=>Object.keys(o||{})),...Object.values(manualGroupRatings).flatMap(o=>Object.keys(o||{}))];
+  if(!cleaned || isBlockedGroupMember(cleaned)) return "";
+  const all=[...BASE_GROUP_MEMBERS,...Object.values(GROUP_RATINGS).flatMap(o=>Object.keys(o||{})),...Object.values(manualGroupRatings).flatMap(o=>Object.keys(o||{}))]
+    .filter(k=>!isBlockedGroupMember(k));
   return all.find(k=>cleanMemberName(k)===cleaned) || cleaned;
 }
 function refreshGroupMembers(){
   const seen=new Set(),next=[];
-  const add=n=>{const c=cleanMemberName(n);if(c&&!seen.has(c)){seen.add(c);next.push(n);}};
+  const add=n=>{
+    const c=cleanMemberName(n);
+    if(!c || isBlockedGroupMember(c) || seen.has(c)) return;
+    seen.add(c);
+    next.push(n);
+  };
   BASE_GROUP_MEMBERS.forEach(add);
   Object.values(GROUP_RATINGS).forEach(o=>Object.keys(o||{}).forEach(add));
   Object.values(manualGroupRatings).forEach(o=>Object.keys(o||{}).forEach(add));
@@ -1006,7 +1408,11 @@ function normalizedVote(v){
 }
 function groupVotesFor(card){
   const base=GROUP_RATINGS[card.id]||{}, manual=manualGroupRatings[card.id]||{}, merged={...base,...manual};
-  return Object.fromEntries(Object.entries(merged).map(([k,v])=>[k,normalizedVote(v)]));
+  return Object.fromEntries(
+    Object.entries(merged)
+      .filter(([k])=>!isBlockedGroupMember(k))
+      .map(([k,v])=>[k,normalizedVote(v)])
+  );
 }
 function memberVoteFor(card, member=activeMember){
   if(member===GROUP_ALL) return null;
@@ -1331,7 +1737,11 @@ el("memberTierInput").addEventListener("input",updateMemberTierPreview);
 el("memberNameInput").addEventListener("change",()=>{const card=cards.find(c=>c.id===selectedMemberCardId);if(!card)return;const key=resolveMemberKey(el("memberNameInput").value),cur=key?groupVotesFor(card)[key]:null;if(cur)el("memberTierInput").value=cur.raw??cur.tier??"";updateMemberTierPreview();syncMemberDeleteButton();});
 document.querySelectorAll(".member-quick-tier").forEach(btn=>btn.addEventListener("click",()=>{el("memberTierInput").value=btn.dataset.memberTier;updateMemberTierPreview();}));
 el("saveMemberRating").addEventListener("click",()=>{
-  const card=cards.find(c=>c.id===selectedMemberCardId);if(!card)return;const name=resolveMemberKey(el("memberNameInput").value),raw=el("memberTierInput").value.trim(),tier=normalizeTierInput(raw);if(!name){alert("メンバー名を入力してください。");return;}if(!tier){alert("評価は S / A / B / C / D / 0 / - の形式で入力してください。");return;}
+  const card=cards.find(c=>c.id===selectedMemberCardId);if(!card)return;
+  const rawName=el("memberNameInput").value;
+  if(isBlockedGroupMember(rawName)){alert("「しょへ」は評価者から削除されています。");return;}
+  const name=resolveMemberKey(rawName),raw=el("memberTierInput").value.trim(),tier=normalizeTierInput(raw);
+  if(!name){alert("メンバー名を入力してください。");return;}if(!tier){alert("評価は S / A / B / C / D / 0 / - の形式で入力してください。");return;}
   manualGroupRatings[card.id]||={};manualGroupRatings[card.id][name]={tier,raw,updatedAt:new Date().toISOString()};persistManualGroupRatings();refreshGroupMembers();el("memberRatingDialog").close();renderMemberSelect();render();if(returnToDetailAfterMemberEdit)setTimeout(()=>openDetails(card.id),0);
 });
 el("deleteMemberRating").addEventListener("click",()=>{const card=cards.find(c=>c.id===selectedMemberCardId);if(!card)return;const name=resolveMemberKey(el("memberNameInput").value);if(!manualGroupRatings[card.id]?.[name])return;if(!confirm(`${cleanMemberName(name)} の手動追加・上書き評価を削除しますか？`))return;delete manualGroupRatings[card.id][name];if(!Object.keys(manualGroupRatings[card.id]).length)delete manualGroupRatings[card.id];persistManualGroupRatings();refreshGroupMembers();el("memberRatingDialog").close();renderMemberSelect();render();if(returnToDetailAfterMemberEdit)setTimeout(()=>openDetails(card.id),0);});
