@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f5f9ff">
+<meta name="theme-color" content="#111820">
 <title>Shadowverse: Worlds Beyond｜アズヴォルト・レヴナント 新弾カード事前評価</title>
 <style>
 :root{
@@ -72,7 +72,7 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 }
 .controls-grid{
   display:grid;
-  grid-template-columns:minmax(260px,1fr) 180px 190px 118px;
+  grid-template-columns:minmax(240px,1fr) 190px 180px 210px 118px;
   gap:10px;align-items:center
 }
 .search,.select{
@@ -157,7 +157,23 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 }
 .reason-text.expanded{-webkit-line-clamp:unset;display:block}
 .reason-more{border:0;background:none;color:#3676aa;font-size:12px;font-weight:750;padding:3px 0 0}
-.card-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto;padding-top:14px}
+.group-box{margin-top:12px;border:1px solid #dbe6ef;background:#fbfdff;border-radius:12px;padding:10px 11px}
+.group-head{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:7px;font-size:12px;color:#5c7186}
+.group-head strong{font-size:14px;color:#2c4359}.group-total{margin-left:auto;font-size:11px;color:#75879a}
+.group-tier{display:inline-grid;place-items:center;min-width:30px;height:27px;padding:0 8px;border-radius:8px;font-weight:900;font-size:14px}
+.group-tier.multi{background:#eef2f6;color:#566b7e}
+.mini-dist{display:grid;grid-template-columns:repeat(5,1fr);gap:4px}.mini-tier{text-align:center;border:1px solid #e1e8ef;border-radius:7px;padding:4px 2px;font-size:10px;color:#65778a;background:#fff}.mini-tier b{display:block;font-size:12px;color:#354d64}
+.member-focus{display:flex;align-items:center;gap:7px;margin-top:8px;padding-top:8px;border-top:1px solid #e6edf3;font-size:12px}.member-focus b{color:#314c65}
+.poll-large{margin-top:12px;border:1px solid #dbe5ee;border-radius:12px;padding:13px;background:#fbfdff}.poll-title{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:10px}.poll-title strong{font-size:16px}.poll-title small{color:#728397;margin-left:auto}.poll-row{display:grid;grid-template-columns:24px 1fr 74px;gap:8px;align-items:center;margin:7px 0}.poll-row .plabel{font-weight:900;font-size:13px}.poll-track{height:12px;background:#eaf0f5;border-radius:999px;overflow:hidden}.poll-fill{height:100%;background:#7ea8cb;border-radius:999px;min-width:0}.poll-val{text-align:right;font-size:11px;color:#526a80}.poll-members{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;padding-top:10px;border-top:1px solid #e2e9ef}.member-chip{display:inline-flex;align-items:center;gap:5px;border:1px solid #d9e3ec;background:#fff;border-radius:999px;padding:5px 8px;font-size:10px;color:#50677d}.member-chip .user-tier{height:22px;min-width:25px;font-size:11px;padding:0 5px}.no-vote{color:#8897a5;font-size:12px}.group-note{font-size:11px;color:#76879a;margin-top:8px}
+
+
+.final-rating-chip{display:inline-flex;align-items:center;gap:4px;height:28px;padding:0 9px;border-radius:8px;border:1px solid #c8d9e8;background:#f0f6fb;color:#375c7b;font-size:12px;font-weight:900}.final-rating-chip .user-tier{height:21px;min-width:23px;font-size:11px;padding:0 5px}.final-empty{color:#7b8b9a;background:#f7f9fb;border-color:#dde5ec}
+.member-chip.member-edit{cursor:pointer;font:inherit;color:inherit;appearance:none}.member-chip.member-edit:hover{border-color:#91b4d1;background:#f2f8fd}
+.member-add-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.member-add-btn{min-height:36px;padding:6px 10px}
+.member-editor-grid{display:grid;grid-template-columns:1fr 180px;gap:10px;margin-top:14px}.member-editor-field label{display:block;font-size:12px;font-weight:850;margin-bottom:5px;color:#5d7388}.member-editor-field input{width:100%;height:44px;border:1px solid var(--line2);border-radius:10px;background:#fff;color:var(--text);padding:0 11px}.member-tier-preview{margin-top:9px;padding:9px 11px;border:1px solid #dbe5ee;border-radius:10px;background:#f8fbfe;font-size:13px;color:#536b81}.member-tier-preview strong{margin-right:7px}.member-help{margin-top:8px;color:#75879a;font-size:11px}
+@media(max-width:620px){.member-editor-grid{grid-template-columns:1fr}}
+
+.card-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:auto;padding-top:14px}
 .btn{
   min-height:42px;border-radius:10px;border:1px solid var(--line2);
   background:#fff;color:#3e5872;font-weight:800
@@ -229,7 +245,8 @@ dialog::backdrop{background:rgba(47,60,76,.28);backdrop-filter:blur(3px)}
 
 @media(max-width:1120px){
   .grid{grid-template-columns:1fr}
-  .controls-grid{grid-template-columns:1fr 160px 170px 110px}
+  .controls-grid{grid-template-columns:1fr 1fr 1fr 150px}
+  .search{grid-column:1/-1}
 }
 @media(max-width:760px){
   body{font-size:15px}
@@ -264,6 +281,421 @@ dialog::backdrop{background:rgba(47,60,76,.28);backdrop-filter:blur(3px)}
   .controls-grid{grid-template-columns:1fr}
   .search{grid-column:auto}
 }
+
+/* =========================================================
+   Deck Portal inspired visual theme
+   - dark blue-black base
+   - antique gold lines
+   - cyan active accents
+   - restrained fantasy/card-database feel
+   ========================================================= */
+:root{
+  --bg:#111820;
+  --panel:#18212b;
+  --soft:#1d2732;
+  --line:#425363;
+  --line2:#667684;
+  --text:#f2eee6;
+  --muted:#a8a99f;
+  --blue:#63d8d5;
+  --blue-soft:#203942;
+  --shadow:0 10px 28px rgba(0,0,0,.22);
+  --gold:#d7bf83;
+  --gold-2:#a68e5a;
+  --navy:#10171f;
+  --navy-2:#17212b;
+
+  --s-bg:#4a272d; --s-fg:#ffb6ba;
+  --a-bg:#4b3624; --a-fg:#f6c987;
+  --b-bg:#464224; --b-fg:#e8dd86;
+  --c-bg:#213f36; --c-fg:#9ad8b4;
+  --d-bg:#253847; --d-fg:#a9c8df;
+}
+html{background:var(--bg)}
+body{
+  background:
+    radial-gradient(circle at 78% -8%,rgba(179,145,97,.15),transparent 27%),
+    radial-gradient(circle at 15% 24%,rgba(80,122,137,.10),transparent 32%),
+    linear-gradient(125deg,rgba(255,255,255,.018) 0 1px,transparent 1px 58px),
+    #111820;
+  color:var(--text);
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;pointer-events:none;z-index:-1;
+  background:
+    linear-gradient(115deg,transparent 0 66%,rgba(207,185,132,.035) 66% 66.15%,transparent 66.15% 100%),
+    linear-gradient(34deg,transparent 0 38%,rgba(111,218,214,.025) 38% 38.12%,transparent 38.12% 100%);
+}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{
+  outline:2px solid rgba(99,216,213,.55);
+}
+.wrap{max-width:1440px}
+.hero-wrap{
+  max-width:none;
+  padding:0;
+  border-bottom:1px solid rgba(215,191,131,.45);
+  background:
+    radial-gradient(circle at 78% 30%,rgba(122,92,73,.34),transparent 25%),
+    radial-gradient(circle at 64% 110%,rgba(82,114,127,.22),transparent 34%),
+    linear-gradient(103deg,rgba(12,18,25,.99) 3%,rgba(20,27,35,.95) 44%,rgba(29,32,38,.90) 100%);
+  position:relative;
+  overflow:hidden;
+}
+.hero-wrap::before{
+  content:"";
+  position:absolute;inset:0;
+  background:
+    linear-gradient(120deg,transparent 0 58%,rgba(225,207,160,.07) 58.1% 58.35%,transparent 58.45%),
+    linear-gradient(38deg,transparent 0 73%,rgba(95,218,214,.05) 73.1% 73.35%,transparent 73.45%);
+  pointer-events:none;
+}
+.hero-wrap::after{
+  content:"";
+  position:absolute;
+  width:380px;height:380px;right:-120px;top:-145px;
+  border:1px solid rgba(215,191,131,.16);
+  transform:rotate(26deg);
+  box-shadow:0 0 0 35px rgba(215,191,131,.018),0 0 0 72px rgba(99,216,213,.012);
+  pointer-events:none;
+}
+.hero{
+  max-width:1400px;margin:0 auto;
+  padding:46px 28px 42px;
+  position:relative;z-index:1;
+}
+.title-small{
+  font-family:Georgia,"Times New Roman","Yu Mincho","Hiragino Mincho ProN",serif;
+  font-size:clamp(14px,1.5vw,20px);
+  font-weight:500;
+  letter-spacing:.12em;
+  color:var(--gold);
+  margin:0 0 11px;
+}
+.title-mid{
+  font-family:Georgia,"Times New Roman","Yu Mincho","Hiragino Mincho ProN",serif;
+  font-size:clamp(22px,2.7vw,36px);
+  font-weight:500;
+  letter-spacing:.08em;
+  color:#ded4bc;
+  margin:0 0 7px;
+}
+.title-main{
+  font-family:"Yu Mincho","Hiragino Mincho ProN",Georgia,serif;
+  font-size:clamp(38px,5vw,62px);
+  font-weight:600;
+  letter-spacing:.04em;
+  color:#fffaf0;
+  text-shadow:0 2px 14px rgba(0,0,0,.28);
+}
+.top-rule{
+  width:min(520px,70vw);
+  height:1px;
+  background:linear-gradient(90deg,var(--gold),rgba(215,191,131,.12));
+  margin-top:24px;
+  position:relative;
+}
+.top-rule::before{
+  content:"";
+  position:absolute;left:0;top:-2px;width:64px;height:3px;
+  background:var(--blue);
+  box-shadow:0 0 9px rgba(99,216,213,.32);
+}
+
+/* class navigation */
+.class-bar{
+  top:0;
+  background:rgba(15,22,30,.96);
+  border-top:0;
+  border-bottom:1px solid rgba(215,191,131,.35);
+  box-shadow:0 6px 18px rgba(0,0,0,.20);
+}
+.class-inner{
+  max-width:1440px;
+  padding:0 24px;
+  gap:0;
+}
+.class-btn{
+  min-height:58px;
+  border:0;
+  border-right:1px solid rgba(215,191,131,.12);
+  border-radius:0;
+  background:transparent;
+  color:#d7d4cb;
+  padding:0 18px;
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+  font-weight:600;
+  font-size:15px;
+  position:relative;
+}
+.class-btn:first-child{border-left:1px solid rgba(215,191,131,.12)}
+.class-btn:hover{background:rgba(215,191,131,.05);color:#fff}
+.class-btn.active{
+  background:rgba(99,216,213,.055);
+  color:#fffdf4;
+  border-color:rgba(215,191,131,.12);
+}
+.class-btn.active::after{
+  content:"";position:absolute;left:16px;right:16px;bottom:0;height:3px;
+  background:var(--blue);box-shadow:0 0 10px rgba(99,216,213,.38);
+}
+
+/* search / sort panel */
+.controls-card{
+  margin-top:32px;
+  background:rgba(25,34,44,.96);
+  border:1px solid rgba(215,191,131,.48);
+  border-radius:5px;
+  box-shadow:0 14px 34px rgba(0,0,0,.18);
+  padding:17px;
+}
+.search,.select{
+  background:#151e28;
+  color:#f0eee7;
+  border:1px solid #65717c;
+  border-radius:3px;
+}
+.search::placeholder{color:#7f8994}
+.select option{background:#151e28;color:#f0eee7}
+.dir-btn{
+  background:#18374a;
+  color:#f0e4c7;
+  border:1px solid var(--gold-2);
+  border-radius:3px;
+}
+.dir-btn:hover{background:#214b61}
+.quick-row{border-top:1px solid rgba(215,191,131,.20)}
+.quick-label{color:#c7b78f}
+.tier-filter,.rated-toggle{
+  border:1px solid #516170;
+  background:#151e28;
+  color:#cfd4d4;
+  border-radius:3px;
+}
+.tier-filter:hover,.rated-toggle:hover{border-color:var(--gold-2);color:#fff}
+.tier-filter.active{
+  box-shadow:none;
+  border-color:var(--blue);
+  color:#fff;
+  background:#1d343d;
+}
+.rated-toggle.active{
+  background:#1d343d;
+  color:#dffafa;
+  border-color:var(--blue);
+}
+
+/* summary */
+.summary{color:#b9b7ad;margin-top:18px}
+.summary strong{color:#f4ead4}
+.count-chip{
+  background:#17212b;
+  border:1px solid #3d4d5b;
+  border-radius:3px;
+  color:#d2d5d3;
+}
+.section-head{margin-top:28px;border-bottom:1px solid rgba(215,191,131,.24);padding-bottom:10px}
+.section-head h2{
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+  color:#f6f1e6;
+  font-weight:600;
+  letter-spacing:.06em;
+}
+.section-head h2::before{
+  content:"";
+  display:inline-block;width:34px;height:1px;background:var(--gold);
+  vertical-align:middle;margin-right:10px;
+}
+.section-head small{color:#b9ad8c}
+
+/* cards */
+.grid{gap:16px}
+.card{
+  background:linear-gradient(180deg,#19232d 0%,#151e27 100%);
+  border:1px solid #40515f;
+  border-radius:5px;
+  padding:15px;
+  box-shadow:0 9px 22px rgba(0,0,0,.19);
+  position:relative;
+}
+.card::before{
+  content:"";position:absolute;left:-1px;top:-1px;width:48px;height:1px;background:var(--gold);
+}
+.card::after{
+  content:"";position:absolute;left:-1px;top:-1px;width:1px;height:48px;background:var(--gold);
+}
+.card-image{
+  border-radius:3px;
+  border:1px solid #8b7a55;
+  background:#0f161d;
+  box-shadow:0 5px 14px rgba(0,0,0,.30);
+}
+.card h3{
+  color:#faf6ed;
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+  font-weight:650;
+  letter-spacing:.025em;
+}
+.badge{
+  background:#203141;
+  color:#d3dce2;
+  border:1px solid #354c60;
+  border-radius:3px;
+}
+.badge.ai{
+  background:#3a3222;
+  color:#ead39a;
+  border-color:#685a39;
+}
+.label{
+  color:#76dcd8;
+  letter-spacing:.10em;
+}
+.axis{color:#e6dfce}
+.copy{color:#c7ccd0}
+.reason-box{
+  border-left:2px solid var(--gold);
+  background:#111a22;
+  border-radius:0 3px 3px 0;
+}
+.reason-title{color:#d3bc82}
+.reason-text{color:#ced2d3}
+.reason-more{color:#76dcd8}
+.card-actions{gap:7px}
+.btn{
+  border:1px solid #64717d;
+  background:#17212b;
+  color:#e8e4da;
+  border-radius:3px;
+}
+.btn:hover{background:#202d39;border-color:#9f8b5c}
+.btn.primary{
+  background:#17374a;
+  color:#f1e7ce;
+  border-color:#b79d62;
+}
+.btn.primary:hover{background:#214a61}
+.btn.danger{background:#342126;border-color:#6d474b;color:#f0c3c5}
+.empty{
+  background:#17212b;
+  border:1px solid #40515f;
+  border-radius:4px;
+  color:#aaa99f;
+}
+
+/* evaluation tier colors retain identity but fit the dark UI */
+.user-tier{border-radius:3px}
+.tier-S{background:#4a272d;color:#ffc0c4;border-color:#7e4149}
+.tier-A{background:#4b3624;color:#ffd39b;border-color:#7d5c35}
+.tier-B{background:#454122;color:#f1e394;border-color:#736c34}
+.tier-C{background:#213f36;color:#a8e3bd;border-color:#356653}
+.tier-D{background:#253847;color:#b9d7ec;border-color:#416174}
+
+/* data tools */
+.tools{
+  border-top:1px solid rgba(215,191,131,.30);
+}
+.tools h2{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;color:#f4efe3}
+.tools p,footer{color:#979b9c}
+.tool-btn{
+  background:#17212b;
+  color:#ddd9cf;
+  border:1px solid #52606c;
+  border-radius:3px;
+}
+.reset-btn{background:#312126;color:#e4b9bc;border-color:#68464b}
+
+/* modal */
+dialog{
+  background:#151e27;
+  color:#f0eee6;
+  border:1px solid rgba(215,191,131,.62);
+  border-radius:6px;
+  box-shadow:0 24px 80px rgba(0,0,0,.58);
+}
+dialog::backdrop{background:rgba(4,9,13,.72);backdrop-filter:blur(4px)}
+.dialog-head{
+  background:#111922;
+  border-bottom:1px solid rgba(215,191,131,.32);
+  color:#f5edda;
+}
+.icon-close{
+  border:1px solid #596774;
+  background:#17222c;
+  color:#d9d9d3;
+  border-radius:50%;
+}
+.detail-body img,.rating-card-head img{border-color:#8b7a55;border-radius:3px}
+.detail-body h2,.rating-card-head h2{
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+  color:#fffaf0;
+}
+.detail-block{
+  background:#111922;
+  border:1px solid #394a58;
+  border-radius:3px;
+  color:#d4d5d2;
+}
+.detail-block b{color:#76dcd8}
+.detail-rating{border-top-color:#394a58}
+.rating-label{color:#e7dcc3}
+.tier-pick{
+  border-radius:3px;
+  background:#17212b;
+  border:1px solid #566573;
+  color:#e7e4dc;
+}
+.tier-pick.selected{
+  box-shadow:inset 0 0 0 2px var(--blue);
+  border-color:var(--blue);
+}
+.rating-body textarea{
+  border-radius:3px;
+  background:#111922;
+  color:#f0eee7;
+  border-color:#4a5b69;
+}
+.zoom-body{background:#0f171f}
+.zoom-body img{border-radius:3px;box-shadow:0 12px 35px rgba(0,0,0,.45)}
+
+
+/* editable group / final rating controls */
+.final-rating-chip{background:#172a39;border-color:#6c7b87;color:#e8dfcb;border-radius:3px}
+.member-chip.member-edit{background:#17212b;border-color:#465967;color:#deded8}.member-chip.member-edit:hover{background:#223240;border-color:#9f8b5c}
+.member-editor-field label{color:#d7ccb5}.member-editor-field input{background:#111922;color:#f0eee7;border-color:#4a5b69;border-radius:3px}.member-tier-preview{background:#111922;border-color:#394a58;color:#d4d5d2;border-radius:3px}.member-help{color:#a9abad}
+
+/* mobile: closer to the portal's dense, card-first composition */
+@media(max-width:760px){
+  .hero{padding:32px 20px 28px}
+  .title-small{font-size:13px;letter-spacing:.10em}
+  .title-mid{font-size:22px}
+  .title-main{font-size:36px;line-height:1.15}
+  .class-inner{padding:0 12px}
+  .class-btn{min-height:54px;padding:0 16px;font-size:15px}
+  .wrap{padding-left:12px;padding-right:12px}
+  .controls-card{margin-top:20px;border-radius:3px}
+  .card{
+    grid-template-columns:132px minmax(0,1fr);
+    gap:13px;
+    padding:12px;
+    border-radius:4px;
+  }
+  .card-image{width:132px;border-radius:2px}
+  .card h3{font-size:19px;line-height:1.35}
+  .badge{font-size:11px}
+  .label{font-size:10px}
+  .copy,.axis{font-size:13px}
+  .btn{min-height:43px}
+}
+@media(max-width:470px){
+  .hero{padding:28px 16px 24px}
+  .title-main{font-size:32px}
+  .card{grid-template-columns:118px minmax(0,1fr)}
+  .card-image{width:118px}
+  .controls-card{padding:10px}
+  .section-head h2{font-size:22px}
+}
+
 </style>
 </head>
 <body>
@@ -284,16 +716,21 @@ dialog::backdrop{background:rgba(47,60,76,.28);backdrop-filter:blur(3px)}
   <section class="controls-card" aria-label="絞り込みと並び替え">
     <div class="controls-grid">
       <input class="search" id="search" type="search" placeholder="カード名・デッキ軸・性能で検索">
-      <select class="select" id="tierSelect" aria-label="自分の評価で絞り込み">
-        <option value="all">自分の評価：すべて</option>
-        <option value="S">自分の評価：S</option>
-        <option value="A">自分の評価：A</option>
-        <option value="B">自分の評価：B</option>
-        <option value="C">自分の評価：C</option>
-        <option value="D">自分の評価：D</option>
-        <option value="unrated">自分の評価：未評価</option>
+      <select class="select" id="memberSelect" aria-label="評価メンバーで絞り込み"></select>
+      <select class="select" id="tierSelect" aria-label="みんな・メンバーの評価で絞り込み">
+        <option value="all">評価Tier：すべて</option>
+        <option value="S">評価Tier：S</option>
+        <option value="A">評価Tier：A</option>
+        <option value="B">評価Tier：B</option>
+        <option value="C">評価Tier：C</option>
+        <option value="D">評価Tier：D</option>
+        <option value="unrated">評価Tier：未評価</option>
       </select>
       <select class="select" id="sortSelect" aria-label="並び替え">
+        <option value="final">総合評価順</option>
+        <option value="group">みんなの評価順</option>
+        <option value="member">選択メンバー評価順</option>
+        <option value="votes">評価者数順</option>
         <option value="ai">AI評価順</option>
         <option value="cost">コスト順</option>
         <option value="class">クラス順</option>
@@ -304,7 +741,7 @@ dialog::backdrop{background:rgba(47,60,76,.28);backdrop-filter:blur(3px)}
     </div>
 
     <div class="quick-row">
-      <span class="quick-label">Tier絞り込み</span>
+      <span class="quick-label" id="tierScopeLabel">みんなのTier絞り込み</span>
       <button class="tier-filter active" data-tier="all">全て</button>
       <button class="tier-filter tier-S" data-tier="S">S</button>
       <button class="tier-filter tier-A" data-tier="A">A</button>
@@ -326,7 +763,7 @@ dialog::backdrop{background:rgba(47,60,76,.28);backdrop-filter:blur(3px)}
 
   <section class="tools">
     <h2>評価データ</h2>
-    <p>評価と理由はこのブラウザ内に保存されます。新カードを追加しても、同じカードIDの評価は維持されます。</p>
+    <p>「みんなの評価」への追加・上書き、あとから決める「総合評価」、自分の評価・メモはこのブラウザ内へ保存され、JSONバックアップにも含まれます。</p>
     <div class="tool-row">
       <button class="tool-btn" id="exportRatings" type="button">JSONでバックアップ</button>
       <button class="tool-btn" id="importRatings" type="button">JSONから復元</button>
@@ -335,7 +772,7 @@ dialog::backdrop{background:rgba(47,60,76,.28);backdrop-filter:blur(3px)}
     </div>
   </section>
 
-  <footer>※ AI評価と自分のS/A/B/C/D評価は完全に別データです。新規一括追加カードのAI評価は公開直後の暫定値です。</footer>
+  <footer>※ みんなの評価は共有メモ＋あとから追加したメンバー評価を集計。S+ / A+ / 連続文字はS〜Dへ正規化し、0・-はDとして集計します。それ以外の判定不能な値は未評価です。</footer>
 </div>
 
 <dialog id="imageDialog">
@@ -352,6 +789,71 @@ dialog::backdrop{background:rgba(47,60,76,.28);backdrop-filter:blur(3px)}
     <button class="icon-close" data-close="detailDialog" type="button" aria-label="閉じる">×</button>
   </div>
   <div id="detailContent"></div>
+</dialog>
+
+
+<dialog id="overallDialog">
+  <div class="dialog-head">
+    <strong>総合評価を設定</strong>
+    <button class="icon-close" data-close="overallDialog" type="button" aria-label="閉じる">×</button>
+  </div>
+  <div class="rating-body">
+    <div class="rating-card-head">
+      <img id="overallImage" alt="">
+      <div><h2 id="overallName"></h2><div class="badges" id="overallMeta"></div></div>
+    </div>
+    <div class="rating-label">このカードの総合評価</div>
+    <div class="tier-picks" id="overallTierPicks">
+      <button class="tier-pick final-tier-pick tier-S" data-final-tier="S" type="button">S</button>
+      <button class="tier-pick final-tier-pick tier-A" data-final-tier="A" type="button">A</button>
+      <button class="tier-pick final-tier-pick tier-B" data-final-tier="B" type="button">B</button>
+      <button class="tier-pick final-tier-pick tier-C" data-final-tier="C" type="button">C</button>
+      <button class="tier-pick final-tier-pick tier-D" data-final-tier="D" type="button">D</button>
+    </div>
+    <div class="rating-actions">
+      <button class="btn danger hidden" id="deleteOverallRating" type="button">総合評価を削除</button>
+      <button class="btn" data-close="overallDialog" type="button">キャンセル</button>
+      <button class="btn primary" id="saveOverallRating" type="button">総合評価を保存</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="memberRatingDialog">
+  <div class="dialog-head">
+    <strong>メンバー評価を追加・編集</strong>
+    <button class="icon-close" data-close="memberRatingDialog" type="button" aria-label="閉じる">×</button>
+  </div>
+  <div class="rating-body">
+    <div class="rating-card-head">
+      <img id="memberRatingImage" alt="">
+      <div><h2 id="memberRatingCardName"></h2><div class="badges" id="memberRatingMeta"></div></div>
+    </div>
+    <div class="member-editor-grid">
+      <div class="member-editor-field">
+        <label for="memberNameInput">名前</label>
+        <input id="memberNameInput" type="text" list="memberNameOptions" placeholder="例：オメガ柿本">
+        <datalist id="memberNameOptions"></datalist>
+      </div>
+      <div class="member-editor-field">
+        <label for="memberTierInput">評価</label>
+        <input id="memberTierInput" type="text" maxlength="20" placeholder="S / A / B / C / D / 0 / -">
+      </div>
+    </div>
+    <div class="tier-picks" style="margin-top:10px" id="memberQuickTiers">
+      <button class="tier-pick member-quick-tier tier-S" data-member-tier="S" type="button">S</button>
+      <button class="tier-pick member-quick-tier tier-A" data-member-tier="A" type="button">A</button>
+      <button class="tier-pick member-quick-tier tier-B" data-member-tier="B" type="button">B</button>
+      <button class="tier-pick member-quick-tier tier-C" data-member-tier="C" type="button">C</button>
+      <button class="tier-pick member-quick-tier tier-D" data-member-tier="D" type="button">D</button>
+    </div>
+    <div class="member-tier-preview" id="memberTierPreview"><strong>集計される評価：</strong><span>未入力</span></div>
+    <div class="member-help">S+ / SSS / 小文字などはS〜Dへ正規化します。<b>0 と - はD</b>として集計します。同じ名前を保存すると、そのカードの評価を上書きします。</div>
+    <div class="rating-actions">
+      <button class="btn danger hidden" id="deleteMemberRating" type="button">このメンバー評価を削除</button>
+      <button class="btn" data-close="memberRatingDialog" type="button">キャンセル</button>
+      <button class="btn primary" id="saveMemberRating" type="button">みんなの評価へ反映</button>
+    </div>
+  </div>
 </dialog>
 
 <dialog id="ratingDialog">
@@ -393,21 +895,35 @@ const cards = [{"name":"束刃の咎人・カットスロート","class":"ネメ
 const CLASS_ORDER = ["エルフ","ロイヤル","ウィッチ","ドラゴン","ナイトメア","ビショップ","ネメシス","ニュートラル"];
 const CLASSES = ["全カード", ...CLASS_ORDER];
 const STORAGE_KEY = "svwb_azvalt_pre_ratings_v1";
+const OVERALL_STORAGE_KEY = "svwb_azvalt_overall_ratings_v1";
+const MANUAL_GROUP_STORAGE_KEY = "svwb_azvalt_manual_group_ratings_v1";
 const TIER_SCORE = {S:5,A:4,B:3,C:2,D:1};
 const TIER_LABELS = ["S","A","B","C","D"];
+const GROUP_RATINGS = {"svwb-014d00542e74":{"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"},"次蔵":{"tier":"D","raw":"D"},"huo5909":{"tier":"B","raw":"ｂ"},"＄":{"tier":"D","raw":"D"},"おじ":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"めいめい":{"tier":"C","raw":"C"}},"svwb-263402ca1f07":{"おじ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"},"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"}},"svwb-efd556cadcad":{"おじ":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"C","raw":"C"},"huo5909":{"tier":"B","raw":"b"},"次蔵":{"tier":"C","raw":"C"},"めいめい":{"tier":"A","raw":"A"},"ナマステ":{"tier":"B","raw":"B"}},"svwb-b9e1889353c0":{"オメガ柿本":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"huo5909":{"tier":"A","raw":"a"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"おじ":{"tier":"B","raw":"b"},"次蔵":{"tier":"B","raw":"B"}},"svwb-53b2310ff8a7":{"おじ":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"＄":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"}},"svwb-91277000a611":{"huo5909":{"tier":"C","raw":"c"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"}},"svwb-2f0031532451":{"huo5909":{"tier":"D","raw":"d"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"DDD"},"まひ [すきーら],":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"}},"svwb-6c095a83919b":{"ナマステ":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"おじ":{"tier":"D","raw":"d"}},"svwb-0f075fc70e6d":{"めいめい":{"tier":"A","raw":"A"},"huo5909":{"tier":"C","raw":"c"},"次蔵":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"B","raw":"B"},"おじ":{"tier":"D","raw":"d"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"}},"svwb-6693263e93b2":{"次蔵":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"huo5909":{"tier":"D","raw":"ddddd"},"＄":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"}},"svwb-25f2951b1bd2":{"おじ":{"tier":"D","raw":"d"},"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"D","raw":"D"},"次蔵":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"},"めいめい":{"tier":"C","raw":"C"}},"svwb-230400dd7ce5":{"オメガ柿本":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"c"},"まひ [すきーら],":{"tier":"C","raw":"C"},"次蔵":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"あD"},"めいめい":{"tier":"C","raw":"C"}},"svwb-447bfc1c8b7a":{"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"B","raw":"B"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"オメガ柿本":{"tier":"B","raw":"B"}},"svwb-8ce2861f2875":{"huo5909":{"tier":"D","raw":"dddd"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"},"次蔵":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"でー"},"めいめい":{"tier":"D","raw":"D"}},"svwb-9a9f912a532c":{"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"dddd"},"まひ [すきーら],":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"C","raw":"C"},"おじ":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"}},"svwb-92f8d09844ed":{"まひ [すきーら],":{"tier":"A","raw":"A"},"huo5909":{"tier":"S","raw":"s"},"オメガ柿本":{"tier":"S","raw":"S"},"＄":{"tier":"A","raw":"A"},"次蔵":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"えす"}},"svwb-60f74fed56cd":{"huo5909":{"tier":"A","raw":"a"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"次蔵":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"C","raw":"C"},"めいめい":{"tier":"C","raw":"c"},"おじ":{"tier":"A","raw":"A"}},"svwb-c10315b16406":{"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"c"},"まひ [すきーら],":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"}},"svwb-3bc93a2ebbd4":{"次蔵":{"tier":"C","raw":"C"},"huo5909":{"tier":"D","raw":"d"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":null,"raw":"f"},"めいめい":{"tier":"D","raw":"D"}},"svwb-fac7a9bd4931":{"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"＄":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S＋"}},"svwb-366b8c72ff4e":{"huo5909":{"tier":"D","raw":"d"},"まひ [すきーら],":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"c"}},"svwb-b9d279bb0496":{"次蔵":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"おじ":{"tier":"S","raw":"S＋"},"まひ [すきーら],":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"}},"svwb-d9eac082932c":{"次蔵":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"c"},"ナマステ":{"tier":"A","raw":"A"},"おじ":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"}},"svwb-822935d1ee03":{"＄":{"tier":"B","raw":"B"},"次蔵":{"tier":"B","raw":"B"},"huo5909":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"D","raw":"D"},"ナマステ":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"めいめい":{"tier":"D","raw":"D"}},"svwb-ff8228bf0500":{"次蔵":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"huo5909":{"tier":"B","raw":"b"},"おじ":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"}},"svwb-ca113e65dd82":{"次蔵":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"}},"svwb-a217c9ae907a":{"次蔵":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"＄":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"s＋"},"huo5909":{"tier":"S","raw":"s"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-8cc0a1834df6":{"huo5909":{"tier":"B","raw":"b"},"＄":{"tier":"S","raw":"S"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"C"}},"svwb-4f7df0c8cd1a":{"huo5909":{"tier":"S","raw":"ss"},"おじ":{"tier":"S","raw":"S＋"},"オメガ柿本":{"tier":"D","raw":"D"},"次蔵":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"}},"svwb-1fc6a8e6a02b":{"huo5909":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"おじ":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"B","raw":"B"}},"svwb-b9d1de4d84bf":{"huo5909":{"tier":"D","raw":"dd"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"おじ":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"}},"svwb-dd2e1e01152b":{"huo5909":{"tier":"S","raw":"s"},"おじ":{"tier":"S","raw":"Sぷらす"},"次蔵":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"},"めいめい":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-4b11e4872714":{"次蔵":{"tier":"A","raw":"A"},"huo5909":{"tier":"C","raw":"c"},"オメガ柿本":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"めいめい":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"}},"svwb-a8d74e4168e8":{"オメガ柿本":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"SSSSSSSSS"},"次蔵":{"tier":"S","raw":"S"},"huo5909":{"tier":"S","raw":"s"},"おじ":{"tier":"C","raw":"C"},"ナマステ":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"めいめい":{"tier":"S","raw":"S"}},"svwb-5695d96b3d66":{"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"d"},"＄":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"d"},"おじ":{"tier":"D","raw":"D"}},"svwb-22771babf7f9":{"オメガ柿本":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"SSS"},"おじ":{"tier":"S","raw":"S＋"},"huo5909":{"tier":"S","raw":"sssssssssss"},"めいめい":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"s"},"＄":{"tier":"S","raw":"S"}},"svwb-8ee1f6624cfe":{"huo5909":{"tier":"A","raw":"a"},"オメガ柿本":{"tier":"D","raw":"D"},"次蔵":{"tier":"B","raw":"B"},"めいめい":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"}},"svwb-8bff9b4da1cf":{"huo5909":{"tier":"D","raw":"d"},"オメガ柿本":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"B","raw":"B"},"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"D","raw":"D"}},"svwb-f2f51f9d3b87":{"huo5909":{"tier":"S","raw":"s"},"次蔵":{"tier":"A","raw":"A"},"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"},"おじ":{"tier":"C","raw":"C"}},"svwb-892512f43c95":{"めいめい":{"tier":"S","raw":"S"},"ナマステ":{"tier":"B","raw":"B"},"次蔵":{"tier":"A","raw":"A"},"＄":{"tier":"C","raw":"C"},"huo5909":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S"}},"svwb-2e1b0f638732":{"次蔵":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"huo5909":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"}},"svwb-b0898283adfd":{"めいめい":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"huo5909":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"おじ":{"tier":"C","raw":"C"}},"svwb-17ad7573d51b":{"次蔵":{"tier":"D","raw":"D"},"＄":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"C","raw":"C"}},"svwb-86bbb3093f02":{"huo5909":{"tier":"S","raw":"SS"},"次蔵":{"tier":"S","raw":"S"},"ナマステ":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"A","raw":"A"},"めいめい":{"tier":"S","raw":"S"},"おじ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-84dc9c16c7b9":{"huo5909":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"A","raw":"A"},"＄":{"tier":"C","raw":"C"},"次蔵":{"tier":"A","raw":"A"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"B","raw":"B"}},"svwb-71c88802b7c4":{"次蔵":{"tier":"B","raw":"B"},"おじ":{"tier":"C","raw":"C"},"huo5909":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"C","raw":"C"}},"svwb-477e41150cd8":{"ナマステ":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S＋"},"huo5909":{"tier":"A","raw":"A"},"次蔵":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-b232040c1532":{"huo5909":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-1c34c6ec382f":{"次蔵":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"huo5909":{"tier":"C","raw":"C"},"＄":{"tier":"D","raw":"D"},"ナマステ":{"tier":"C","raw":"C"},"めいめい":{"tier":"S","raw":"S"},"おじ":{"tier":"C","raw":"C"}},"svwb-c0cb3e628e3a":{"おじ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"B","raw":"B"},"＄":{"tier":"B","raw":"B"},"ナマステ":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"}},"svwb-39628470bf35":{"huo5909":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"s"},"めいめい":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-b4d76dd76ace":{"huo5909":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S"},"＄":{"tier":"A","raw":"A"},"ナマステ":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"B","raw":"B"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"C","raw":"C"}},"svwb-a022a5a0e336":{"huo5909":{"tier":"C","raw":"C"},"ナマステ":{"tier":"A","raw":"A"},"次蔵":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"}},"svwb-522c2236b074":{"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"D","raw":"D"},"おじ":{"tier":"B","raw":"B"},"huo5909":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"}},"svwb-254f3babe9e4":{"ナマステ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"S","raw":"S"},"おじ":{"tier":"S","raw":"s＋"},"＄":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"次蔵":{"tier":"S","raw":"S"},"めいめい":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-36a147ac0c14":{"次蔵":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"huo5909":{"tier":"S","raw":"SSSSSSSSSSS"},"＄":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"},"めいめい":{"tier":"D","raw":"D"}},"svwb-03f4df2bb9d1":{"＄":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S"},"次蔵":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"huo5909":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"}},"svwb-e309aa566e0b":{"huo5909":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"おじ":{"tier":"S","raw":"S"}},"svwb-22de1e963996":{"次蔵":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"S","raw":"S"}},"svwb-9effdefcd7ec":{"huo5909":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"B","raw":"B"},"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"}},"svwb-f56ca67ab67c":{"次蔵":{"tier":"A","raw":"A"},"huo5909":{"tier":"B","raw":"B"},"＄":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"おじ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-1b1e3f6ae150":{"huo5909":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"ナマステ":{"tier":"D","raw":"D"},"＄":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"おじ":{"tier":"B","raw":"B"}},"svwb-4fe1418f51bc":{"huo5909":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-b64c711af81d":{"ナマステ":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S"},"huo5909":{"tier":"D","raw":"D"},"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"}},"svwb-2595a9390240":{"おじ":{"tier":"S","raw":"S"},"huo5909":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"S","raw":"S"},"次蔵":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"B","raw":"B"}},"svwb-6555feeef8c5":{"次蔵":{"tier":"S","raw":"SSS"},"おじ":{"tier":"B","raw":"B"},"huo5909":{"tier":null,"raw":"0"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"D","raw":"D"},"＄":{"tier":"B","raw":"B"},"めいめい":{"tier":"D","raw":"D"}},"svwb-8e9dff23e040":{"huo5909":{"tier":"S","raw":"S"},"ナマステ":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"＄":{"tier":"B","raw":"B"},"おじ":{"tier":"S","raw":"S＋"},"めいめい":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"A","raw":"A"}},"svwb-86a681093ff9":{"次蔵":{"tier":"C","raw":"C"},"huo5909":{"tier":"S","raw":"S"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"おじ":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"}},"svwb-8fa0bc0cdcef":{"huo5909":{"tier":"A","raw":"A"},"＄":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"B","raw":"B"},"おじ":{"tier":"A","raw":"A＋"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-32032cd1ba40":{"huo5909":{"tier":"S","raw":"S"},"次蔵":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"}},"svwb-ae99dc969973":{"＄":{"tier":"S","raw":"S"},"huo5909":{"tier":"A","raw":"A"},"ナマステ":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"おじ":{"tier":"S","raw":"S"},"めいめい":{"tier":"S","raw":"S"},"まひ [すきーら],":{"tier":"A","raw":"A"},"オメガ柿本":{"tier":"B","raw":"B"}},"svwb-85cbb543ac00":{"huo5909":{"tier":null,"raw":"-"},"おじ":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"次蔵":{"tier":"C","raw":"C"},"＄":{"tier":"C","raw":"C"},"ナマステ":{"tier":"B","raw":"B"},"めいめい":{"tier":"B","raw":"B"}},"svwb-0a12c87399bf":{"おじ":{"tier":"A","raw":"A"},"＄":{"tier":"A","raw":"A"},"huo5909":{"tier":"B","raw":"B"},"まひ [すきーら],":{"tier":"C","raw":"C"},"めいめい":{"tier":"D","raw":"D"},"次蔵":{"tier":"C","raw":"C"},"ナマステ":{"tier":"B","raw":"B"},"オメガ柿本":{"tier":"D","raw":"D"}},"svwb-298f87481bc2":{"huo5909":{"tier":"C","raw":"C"},"おじ":{"tier":"S","raw":"S"},"＄":{"tier":"S","raw":"S"},"オメガ柿本":{"tier":"B","raw":"B"},"ナマステ":{"tier":"A","raw":"A"},"まひ [すきーら],":{"tier":"A","raw":"A"},"次蔵":{"tier":"A","raw":"A"},"めいめい":{"tier":"A","raw":"A"}},"svwb-99e08e164a24":{"huo5909":{"tier":null,"raw":"0"},"＄":{"tier":"D","raw":"D"},"オメガ柿本":{"tier":"D","raw":"D"},"まひ [すきーら],":{"tier":"D","raw":"D"},"めいめい":{"tier":"D","raw":"D"},"次蔵":{"tier":"D","raw":"D"},"おじ":{"tier":"S","raw":"sss"},"ナマステ":{"tier":"A","raw":"A"}},"svwb-48a1f0e978b9":{"次蔵":{"tier":"S","raw":"SSS"},"ナマステ":{"tier":"S","raw":"S"},"めいめい":{"tier":"D","raw":"D"},"＄":{"tier":"B","raw":"b"},"huo5909":{"tier":"C","raw":"C"},"まひ [すきーら],":{"tier":"C","raw":"C"},"オメガ柿本":{"tier":"C","raw":"C"},"おじ":{"tier":"D","raw":"D"}}};
+const BASE_GROUP_MEMBERS = ["オメガ柿本","まひ [すきーら],","次蔵","huo5909","＄","おじ","ナマステ","めいめい"];
+let GROUP_MEMBERS = [...BASE_GROUP_MEMBERS];
+const GROUP_ALL = "__group__";
 
 let activeClass = "全カード";
 let activeTier = "all";
+let activeMember = GROUP_ALL;
 let ratedOnly = false;
 let sortDirection = "desc";
 let selectedCardId = null;
 let selectedTier = null;
+let selectedOverallCardId = null;
+let selectedOverallTier = null;
+let selectedMemberCardId = null;
+let returnToDetailAfterMemberEdit = false;
 let userRatings = loadRatings();
+let overallRatings = loadOverallRatings();
+let manualGroupRatings = loadManualGroupRatings();
 
 const el = (id)=>document.getElementById(id);
 const grid = el("grid");
 const search = el("search");
 const tierSelect = el("tierSelect");
+const memberSelect = el("memberSelect");
 const sortSelect = el("sortSelect");
 const sortDir = el("sortDir");
 const summary = el("summary");
@@ -437,7 +953,112 @@ function persistRatings(){
     return false;
   }
 }
+function loadOverallRatings(){
+  try{ const x=JSON.parse(localStorage.getItem(OVERALL_STORAGE_KEY)||"{}"); return x&&typeof x==="object"&&!Array.isArray(x)?x:{}; }catch{return {};}
+}
+function persistOverallRatings(){
+  try{ localStorage.setItem(OVERALL_STORAGE_KEY,JSON.stringify(overallRatings)); return true; }catch{return false;}
+}
+function loadManualGroupRatings(){
+  try{ const x=JSON.parse(localStorage.getItem(MANUAL_GROUP_STORAGE_KEY)||"{}"); return x&&typeof x==="object"&&!Array.isArray(x)?x:{}; }catch{return {};}
+}
+function persistManualGroupRatings(){
+  try{ localStorage.setItem(MANUAL_GROUP_STORAGE_KEY,JSON.stringify(manualGroupRatings)); return true; }catch{return false;}
+}
+function normalizeTierInput(raw){
+  const value=String(raw??"").normalize("NFKC").trim();
+  if(!value) return null;
+  const compact=value.replace(/\s+/g,"");
+  if(/^(0+|[-ー−‐–—]+)$/.test(compact)) return "D";
+  const upper=compact.toUpperCase();
+  if(upper.includes("S") || /えす/.test(value)) return "S";
+  if(upper.includes("A")) return "A";
+  if(upper.includes("B")) return "B";
+  if(upper.includes("C")) return "C";
+  if(upper.includes("D") || /でー/.test(value)) return "D";
+  return null;
+}
 function ratingFor(card){ return userRatings[card.id] || null; }
+function overallRatingFor(card){ return overallRatings[card.id] || null; }
+function overallBadge(card){
+  const r=overallRatingFor(card);
+  return r?.tier ? `<span class="final-rating-chip" title="あとから設定した総合評価">総合 ${tierBadge(r.tier)}</span>` : "";
+}
+function cleanMemberName(name){ return String(name||"").trim().replace(/,+$/g,"").trim(); }
+function resolveMemberKey(input){
+  const cleaned=cleanMemberName(input);
+  if(!cleaned) return "";
+  const all=[...BASE_GROUP_MEMBERS,...Object.values(GROUP_RATINGS).flatMap(o=>Object.keys(o||{})),...Object.values(manualGroupRatings).flatMap(o=>Object.keys(o||{}))];
+  return all.find(k=>cleanMemberName(k)===cleaned) || cleaned;
+}
+function refreshGroupMembers(){
+  const seen=new Set(),next=[];
+  const add=n=>{const c=cleanMemberName(n);if(c&&!seen.has(c)){seen.add(c);next.push(n);}};
+  BASE_GROUP_MEMBERS.forEach(add);
+  Object.values(GROUP_RATINGS).forEach(o=>Object.keys(o||{}).forEach(add));
+  Object.values(manualGroupRatings).forEach(o=>Object.keys(o||{}).forEach(add));
+  GROUP_MEMBERS=next;
+}
+function normalizedVote(v){
+  if(!v) return null;
+  const tier=v.tier || normalizeTierInput(v.raw);
+  return tier ? {...v,tier} : {...v,tier:null};
+}
+function groupVotesFor(card){
+  const base=GROUP_RATINGS[card.id]||{}, manual=manualGroupRatings[card.id]||{}, merged={...base,...manual};
+  return Object.fromEntries(Object.entries(merged).map(([k,v])=>[k,normalizedVote(v)]));
+}
+function memberVoteFor(card, member=activeMember){
+  if(member===GROUP_ALL) return null;
+  return groupVotesFor(card)[member]?.tier || null;
+}
+function groupStats(card){
+  const obj=groupVotesFor(card);
+  const counts={S:0,A:0,B:0,C:0,D:0};
+  let total=0,sum=0;
+  for(const v of Object.values(obj)){
+    if(v?.tier && TIER_SCORE[v.tier]){ counts[v.tier]++; total++; sum+=TIER_SCORE[v.tier]; }
+  }
+  const maxCount=total?Math.max(...TIER_LABELS.map(t=>counts[t])):0;
+  const winners=total?TIER_LABELS.filter(t=>counts[t]===maxCount):[];
+  return {counts,total,avg:total?sum/total:0,winners,consensus:winners.join("/")||"未評価"};
+}
+function groupTierBadge(tier){
+  if(!tier || tier==="未評価") return '<span class="group-tier multi">未評価</span>';
+  if(tier.includes("/")) return `<span class="group-tier multi">${esc(tier)}</span>`;
+  return `<span class="group-tier tier-${tier}">${tier}</span>`;
+}
+function memberTierForFilter(card){
+  if(activeMember===GROUP_ALL) return groupStats(card).winners;
+  const t=memberVoteFor(card);
+  return t ? [t] : [];
+}
+function groupBox(card, large=false){
+  const stats=groupStats(card), votes=groupVotesFor(card);
+  if(large){
+    const rows=TIER_LABELS.map(t=>{
+      const n=stats.counts[t], pct=stats.total?Math.round(n/stats.total*100):0;
+      return `<div class="poll-row"><div class="plabel">${t}</div><div class="poll-track"><div class="poll-fill" style="width:${pct}%"></div></div><div class="poll-val">${n}票 / ${pct}%</div></div>`;
+    }).join("");
+    const members=GROUP_MEMBERS.map(name=>{
+      const v=votes[name];
+      const raw=v?.raw && String(v.raw).toUpperCase()!==v.tier ? ` title="元入力: ${esc(v.raw)}"` : "";
+      if(!v?.tier) return `<button type="button" class="member-chip member-edit" data-member-edit="${esc(name)}">${esc(cleanMemberName(name))} <span class="no-vote">未評価</span></button>`;
+      return `<button type="button" class="member-chip member-edit" data-member-edit="${esc(name)}"${raw}>${esc(cleanMemberName(name))} ${tierBadge(v.tier)}</button>`;
+    }).join("");
+    return `<div class="poll-large"><div class="poll-title"><strong>みんなの評価</strong>${groupTierBadge(stats.consensus)}<span>平均 ${stats.avg?stats.avg.toFixed(2):"-"}/5</span><small>${stats.total}人が評価</small></div>${rows}<div class="poll-members">${members}</div><div class="member-add-row"><button type="button" class="btn good member-add-btn" data-member-add="${card.id}">＋ 名前と評価を追加</button></div><div class="group-note">最多票Tierを「みんなの評価」として表示。平均値は S=5 / A=4 / B=3 / C=2 / D=1。名前を押すとその人の評価を編集できます。</div></div>`;
+  }
+  const mini=TIER_LABELS.map(t=>`<div class="mini-tier"><span>${t}</span><b>${stats.counts[t]}</b></div>`).join("");
+  const member=activeMember!==GROUP_ALL ? `<div class="member-focus"><b>${esc(cleanMemberName(activeMember))}の評価</b>${groupTierBadge(memberVoteFor(card)||"未評価")}</div>` : "";
+  return `<div class="group-box"><div class="group-head"><strong>みんなの評価</strong>${groupTierBadge(stats.consensus)}<span class="group-total">${stats.total}人 / 平均 ${stats.avg?stats.avg.toFixed(2):"-"}</span></div><div class="mini-dist">${mini}</div>${member}</div>`;
+}
+function renderMemberSelect(){
+  refreshGroupMembers();
+  if(activeMember!==GROUP_ALL && !GROUP_MEMBERS.includes(activeMember)) activeMember=GROUP_ALL;
+  memberSelect.innerHTML=`<option value="${GROUP_ALL}">みんな（集計）</option>`+GROUP_MEMBERS.map(n=>`<option value="${esc(n)}">${esc(cleanMemberName(n))}</option>`).join("");
+  memberSelect.value=activeMember;
+  el("tierScopeLabel").textContent=activeMember===GROUP_ALL?"みんなのTier絞り込み":`${cleanMemberName(activeMember)}のTier絞り込み`;
+}
 
 function tierBadge(tier){
   if(!tier) return "";
@@ -467,60 +1088,65 @@ function syncTierQuickButtons(){
 function filteredCards(){
   const q = search.value.trim().toLowerCase();
 
-  let arr = cards.filter(card=>{
-    const rating = ratingFor(card);
-    const text = [card.name,card.axis,card.performance,card.use,card.class,card.tag].join(" ").toLowerCase();
+  let arr=cards.filter(card=>{
+    const personal=ratingFor(card);
+    const text=[card.name,card.axis,card.performance,card.use,card.class,card.tag].join(" ").toLowerCase();
+    const stats=groupStats(card);
+    const memberTier=memberVoteFor(card);
 
-    if(activeClass !== "全カード" && card.class !== activeClass) return false;
+    if(activeClass!=="全カード" && card.class!==activeClass) return false;
     if(q && !text.includes(q)) return false;
-    if(ratedOnly && !rating) return false;
 
-    if(activeTier === "unrated" && rating) return false;
-    if(TIER_LABELS.includes(activeTier) && (!rating || rating.tier !== activeTier)) return false;
+    const hasVote=activeMember===GROUP_ALL ? stats.total>0 : !!memberTier;
+    if(ratedOnly && !hasVote) return false;
 
+    if(activeTier==="unrated" && hasVote) return false;
+    if(TIER_LABELS.includes(activeTier)){
+      const tiers=memberTierForFilter(card);
+      if(!tiers.includes(activeTier)) return false;
+    }
     return true;
   });
 
-  const mode = sortSelect.value;
-  const dir = sortDirection === "asc" ? 1 : -1;
-
+  const mode=sortSelect.value;
+  const dir=sortDirection==="asc"?1:-1;
   arr.sort((a,b)=>{
-    let cmp = 0;
-    if(mode === "ai"){
-      cmp = a.score - b.score;
-    }else if(mode === "cost"){
-      cmp = a.cost - b.cost;
-    }else if(mode === "class"){
-      cmp = CLASS_ORDER.indexOf(a.class) - CLASS_ORDER.indexOf(b.class);
-      if(cmp===0) cmp = a.name.localeCompare(b.name,"ja");
-    }else if(mode === "name"){
-      cmp = a.name.localeCompare(b.name,"ja");
-    }else if(mode === "tier"){
-      const ar = ratingFor(a), br = ratingFor(b);
-      const av = ar ? TIER_SCORE[ar.tier] : 0;
-      const bv = br ? TIER_SCORE[br.tier] : 0;
-      cmp = av - bv;
-      if(cmp===0) cmp = a.score - b.score;
+    let cmp=0;
+    if(mode==="final") cmp=(TIER_SCORE[overallRatingFor(a)?.tier]||0)-(TIER_SCORE[overallRatingFor(b)?.tier]||0);
+    else if(mode==="group") cmp=groupStats(a).avg-groupStats(b).avg;
+    else if(mode==="member"){
+      const av=activeMember===GROUP_ALL?groupStats(a).avg:TIER_SCORE[memberVoteFor(a)]||0;
+      const bv=activeMember===GROUP_ALL?groupStats(b).avg:TIER_SCORE[memberVoteFor(b)]||0;
+      cmp=av-bv;
+    }else if(mode==="votes") cmp=groupStats(a).total-groupStats(b).total;
+    else if(mode==="ai") cmp=a.score-b.score;
+    else if(mode==="cost") cmp=a.cost-b.cost;
+    else if(mode==="class"){
+      cmp=CLASS_ORDER.indexOf(a.class)-CLASS_ORDER.indexOf(b.class);
+      if(cmp===0) cmp=a.name.localeCompare(b.name,"ja");
+    }else if(mode==="name") cmp=a.name.localeCompare(b.name,"ja");
+    else if(mode==="tier"){
+      const ar=ratingFor(a),br=ratingFor(b);
+      cmp=(ar?TIER_SCORE[ar.tier]:0)-(br?TIER_SCORE[br.tier]:0);
     }
-    if(cmp===0 && mode!=="name") cmp = a.name.localeCompare(b.name,"ja");
-    return cmp * dir;
+    if(cmp===0 && mode!=="name") cmp=a.name.localeCompare(b.name,"ja");
+    return cmp*dir;
   });
-
   return arr;
 }
 
 function renderSummary(){
-  const total = cards.length;
-  const rated = cards.filter(c=>ratingFor(c)).length;
-  const tierCounts = Object.fromEntries(TIER_LABELS.map(t=>[
-    t, cards.filter(c=>ratingFor(c)?.tier===t).length
-  ]));
-
-  summary.innerHTML = `
-    <span><strong>評価済み ${rated} / ${total}枚</strong></span>
-    ${TIER_LABELS.map(t=>`<span class="count-chip tier-${t}"><b>${t}</b> ${tierCounts[t]}</span>`).join("")}
-    <span class="count-chip">未評価 ${total-rated}</span>
-  `;
+  const total=cards.length;
+  if(activeMember===GROUP_ALL){
+    const rated=cards.filter(c=>groupStats(c).total>0).length;
+    const validVotes=cards.reduce((s,c)=>s+groupStats(c).total,0);
+    const consensusCounts=Object.fromEntries(TIER_LABELS.map(t=>[t,cards.filter(c=>groupStats(c).winners.includes(t)).length]));
+    summary.innerHTML=`<span><strong>みんなの評価：${GROUP_MEMBERS.length}人 / 有効票 ${validVotes}</strong></span><span class="count-chip">集計済み ${rated}/${total}枚</span>${TIER_LABELS.map(t=>`<span class="count-chip tier-${t}"><b>${t}</b> ${consensusCounts[t]}</span>`).join("")}`;
+  }else{
+    const rated=cards.filter(c=>memberVoteFor(c)).length;
+    const counts=Object.fromEntries(TIER_LABELS.map(t=>[t,cards.filter(c=>memberVoteFor(c)===t).length]));
+    summary.innerHTML=`<span><strong>${esc(cleanMemberName(activeMember))}：評価済み ${rated}/${total}枚</strong></span>${TIER_LABELS.map(t=>`<span class="count-chip tier-${t}"><b>${t}</b> ${counts[t]}</span>`).join("")}<span class="count-chip">未評価 ${total-rated}</span>`;
+  }
 }
 
 function reasonBlock(card){
@@ -552,6 +1178,7 @@ function renderCards(){
         <div class="card-main">
           <div class="name-row">
             <h3>${esc(card.name)}</h3>
+            ${overallBadge(card)}
             ${tierBadge(r?.tier)}
           </div>
           <div class="badges">
@@ -569,10 +1196,12 @@ function renderCards(){
           <div class="label">強い使い方</div>
           <div class="copy">${esc(card.use)}</div>
 
+          ${groupBox(card,false)}
           ${reasonBlock(card)}
 
           <div class="card-actions">
             <button class="btn" type="button" data-detail="${card.id}">詳細を見る</button>
+            <button class="btn good" type="button" data-overall="${card.id}">${overallRatingFor(card) ? "総合評価を変更" : "総合評価"}</button>
             <button class="btn primary" type="button" data-rate="${card.id}">${r ? "評価を変更" : "評価する"}</button>
           </div>
         </div>
@@ -588,6 +1217,9 @@ function renderCards(){
   });
   grid.querySelectorAll("[data-rate]").forEach(btn=>{
     btn.addEventListener("click",()=>openRating(btn.dataset.rate));
+  });
+  grid.querySelectorAll("[data-overall]").forEach(btn=>{
+    btn.addEventListener("click",()=>openOverallRating(btn.dataset.overall));
   });
   grid.querySelectorAll("[data-reason]").forEach(btn=>{
     btn.addEventListener("click",()=>{
@@ -623,6 +1255,7 @@ function openDetails(cardId){
       <div>
         <div class="name-row">
           <h2>${esc(card.name)}</h2>
+          ${overallBadge(card)}
           ${tierBadge(r?.tier)}
         </div>
         <div class="badges">
@@ -633,11 +1266,17 @@ function openDetails(cardId){
         <div class="detail-block"><b>想定デッキ軸</b>${esc(card.axis)}</div>
         <div class="detail-block"><b>性能</b>${esc(card.performance)}</div>
         <div class="detail-block"><b>強い使い方</b>${esc(card.use)}</div>
+        ${groupBox(card,true)}
         <div class="detail-rating">
+          <div class="detail-block">
+            <b>総合評価</b>
+            ${overallRatingFor(card)?.tier ? overallBadge(card) : "未設定"}
+          </div>
           <div class="detail-block">
             <b>自分の評価</b>
             ${r ? `${tierBadge(r.tier)}<div style="margin-top:7px;white-space:pre-wrap">${esc(r.reason || "理由未入力")}</div>` : "未評価"}
           </div>
+          <button class="btn good" style="margin-top:10px;padding:0 15px" type="button" id="detailOverallBtn">${overallRatingFor(card) ? "総合評価を変更" : "総合評価を付ける"}</button>
           <button class="btn primary" style="margin-top:10px;padding:0 15px" type="button" id="detailRateBtn">${r ? "評価を変更" : "評価する"}</button>
         </div>
       </div>
@@ -645,11 +1284,57 @@ function openDetails(cardId){
   `;
   detailDialog.showModal();
   el("detailZoomImage")?.addEventListener("click",()=>{ detailDialog.close(); openImageZoom(cardId); });
+  el("detailContent").querySelectorAll("[data-member-edit]").forEach(btn=>{
+    btn.addEventListener("click",()=>{ detailDialog.close(); openMemberRating(cardId,btn.dataset.memberEdit,true); });
+  });
+  el("detailContent").querySelectorAll("[data-member-add]").forEach(btn=>{
+    btn.addEventListener("click",()=>{ detailDialog.close(); openMemberRating(cardId,"",true); });
+  });
+  el("detailOverallBtn").addEventListener("click",()=>{ detailDialog.close(); openOverallRating(cardId); });
   el("detailRateBtn").addEventListener("click",()=>{
     detailDialog.close();
     openRating(cardId);
   });
 }
+
+function openOverallRating(cardId){
+  const card=cards.find(c=>c.id===cardId); if(!card) return;
+  selectedOverallCardId=cardId; selectedOverallTier=overallRatingFor(card)?.tier||null;
+  el("overallImage").src=card.imageData; el("overallImage").alt=card.name; el("overallName").textContent=card.name;
+  const stats=groupStats(card);
+  el("overallMeta").innerHTML=`<span class="badge">${esc(card.class)}</span><span class="badge">${card.cost}コスト</span><span class="badge">みんな ${esc(stats.consensus)} / ${stats.total}人</span>`;
+  el("deleteOverallRating").classList.toggle("hidden",!overallRatingFor(card));
+  updateOverallTierSelection(); el("overallDialog").showModal();
+}
+function updateOverallTierSelection(){document.querySelectorAll(".final-tier-pick").forEach(btn=>{btn.classList.toggle("selected",btn.dataset.finalTier===selectedOverallTier);});}
+document.querySelectorAll(".final-tier-pick").forEach(btn=>btn.addEventListener("click",()=>{selectedOverallTier=btn.dataset.finalTier;updateOverallTierSelection();}));
+el("saveOverallRating").addEventListener("click",()=>{
+  if(!selectedOverallCardId||!selectedOverallTier){alert("総合評価のS / A / B / C / Dを選んでください。");return;}
+  overallRatings[selectedOverallCardId]={tier:selectedOverallTier,updatedAt:new Date().toISOString()}; persistOverallRatings(); el("overallDialog").close(); render();
+});
+el("deleteOverallRating").addEventListener("click",()=>{if(!selectedOverallCardId||!overallRatings[selectedOverallCardId])return;if(!confirm("このカードの総合評価を削除しますか？"))return;delete overallRatings[selectedOverallCardId];persistOverallRatings();el("overallDialog").close();render();});
+
+function updateMemberTierPreview(){
+  const raw=el("memberTierInput").value,tier=normalizeTierInput(raw),span=el("memberTierPreview").querySelector("span");
+  span.innerHTML=tier?`${tierBadge(tier)} <span style="margin-left:6px">${esc(raw)} → ${tier}として集計</span>`:(raw.trim()?'<span style="color:#d98a8a">判定できません</span>':"未入力");
+  document.querySelectorAll(".member-quick-tier").forEach(btn=>btn.classList.toggle("selected",btn.dataset.memberTier===tier));
+}
+function syncMemberDeleteButton(){const name=resolveMemberKey(el("memberNameInput").value);el("deleteMemberRating").classList.toggle("hidden",!manualGroupRatings[selectedMemberCardId]?.[name]);}
+function openMemberRating(cardId,memberName="",returnToDetail=false){
+  const card=cards.find(c=>c.id===cardId);if(!card)return;selectedMemberCardId=cardId;returnToDetailAfterMemberEdit=returnToDetail;refreshGroupMembers();
+  el("memberRatingImage").src=card.imageData;el("memberRatingImage").alt=card.name;el("memberRatingCardName").textContent=card.name;
+  const stats=groupStats(card);el("memberRatingMeta").innerHTML=`<span class="badge">${esc(card.class)}</span><span class="badge">${card.cost}コスト</span><span class="badge">みんな ${esc(stats.consensus)} / ${stats.total}人</span>`;
+  el("memberNameOptions").innerHTML=GROUP_MEMBERS.map(n=>`<option value="${esc(cleanMemberName(n))}"></option>`).join("");
+  const key=memberName?resolveMemberKey(memberName):"";el("memberNameInput").value=key?cleanMemberName(key):"";const cur=key?groupVotesFor(card)[key]:null;el("memberTierInput").value=cur?.raw??cur?.tier??"";updateMemberTierPreview();syncMemberDeleteButton();el("memberRatingDialog").showModal();
+}
+el("memberTierInput").addEventListener("input",updateMemberTierPreview);
+el("memberNameInput").addEventListener("change",()=>{const card=cards.find(c=>c.id===selectedMemberCardId);if(!card)return;const key=resolveMemberKey(el("memberNameInput").value),cur=key?groupVotesFor(card)[key]:null;if(cur)el("memberTierInput").value=cur.raw??cur.tier??"";updateMemberTierPreview();syncMemberDeleteButton();});
+document.querySelectorAll(".member-quick-tier").forEach(btn=>btn.addEventListener("click",()=>{el("memberTierInput").value=btn.dataset.memberTier;updateMemberTierPreview();}));
+el("saveMemberRating").addEventListener("click",()=>{
+  const card=cards.find(c=>c.id===selectedMemberCardId);if(!card)return;const name=resolveMemberKey(el("memberNameInput").value),raw=el("memberTierInput").value.trim(),tier=normalizeTierInput(raw);if(!name){alert("メンバー名を入力してください。");return;}if(!tier){alert("評価は S / A / B / C / D / 0 / - の形式で入力してください。");return;}
+  manualGroupRatings[card.id]||={};manualGroupRatings[card.id][name]={tier,raw,updatedAt:new Date().toISOString()};persistManualGroupRatings();refreshGroupMembers();el("memberRatingDialog").close();renderMemberSelect();render();if(returnToDetailAfterMemberEdit)setTimeout(()=>openDetails(card.id),0);
+});
+el("deleteMemberRating").addEventListener("click",()=>{const card=cards.find(c=>c.id===selectedMemberCardId);if(!card)return;const name=resolveMemberKey(el("memberNameInput").value);if(!manualGroupRatings[card.id]?.[name])return;if(!confirm(`${cleanMemberName(name)} の手動追加・上書き評価を削除しますか？`))return;delete manualGroupRatings[card.id][name];if(!Object.keys(manualGroupRatings[card.id]).length)delete manualGroupRatings[card.id];persistManualGroupRatings();refreshGroupMembers();el("memberRatingDialog").close();renderMemberSelect();render();if(returnToDetailAfterMemberEdit)setTimeout(()=>openDetails(card.id),0);});
 
 function openRating(cardId){
   const card = cards.find(c=>c.id===cardId);
@@ -722,13 +1407,18 @@ document.querySelectorAll("[data-close]").forEach(btn=>{
     if(d?.open) d.close();
   });
 });
-[el("imageDialog"),detailDialog,ratingDialog].forEach(d=>{
+[el("imageDialog"),detailDialog,el("overallDialog"),el("memberRatingDialog"),ratingDialog].forEach(d=>{
   d.addEventListener("click",e=>{
     if(e.target===d) d.close();
   });
 });
 
 search.addEventListener("input",render);
+memberSelect.addEventListener("change",()=>{
+  activeMember=memberSelect.value;
+  renderMemberSelect();
+  render();
+});
 sortSelect.addEventListener("change",render);
 tierSelect.addEventListener("change",()=>{
   activeTier = tierSelect.value;
@@ -773,9 +1463,11 @@ el("resetRatings").addEventListener("click",()=>{
 el("exportRatings").addEventListener("click",()=>{
   const payload = {
     app:"Shadowverse Worlds Beyond 新弾カード事前評価",
-    version:1,
+    version:3,
     exportedAt:new Date().toISOString(),
-    ratings:userRatings
+    ratings:userRatings,
+    overallRatings:overallRatings,
+    manualGroupRatings:manualGroupRatings
   };
   const blob = new Blob([JSON.stringify(payload,null,2)],{type:"application/json"});
   const url = URL.createObjectURL(blob);
@@ -798,6 +1490,8 @@ el("importFile").addEventListener("change",async e=>{
     if(!incoming || typeof incoming!=="object" || Array.isArray(incoming)) throw new Error();
     if(!confirm("現在の評価データに、選択したバックアップを上書きしますか？")) return;
     userRatings=incoming;
+    if(parsed.overallRatings&&typeof parsed.overallRatings==="object"&&!Array.isArray(parsed.overallRatings)){overallRatings=parsed.overallRatings;persistOverallRatings();}
+    if(parsed.manualGroupRatings&&typeof parsed.manualGroupRatings==="object"&&!Array.isArray(parsed.manualGroupRatings)){manualGroupRatings=parsed.manualGroupRatings;persistManualGroupRatings();refreshGroupMembers();renderMemberSelect();}
     persistRatings();
     render();
   }catch{
@@ -807,7 +1501,9 @@ el("importFile").addEventListener("change",async e=>{
   }
 });
 
+refreshGroupMembers();
 renderClassFilters();
+renderMemberSelect();
 syncTierQuickButtons();
 render();
 </script>
